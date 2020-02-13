@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>函数的递归和闭包</title>
+      <link href="/2020/02/13/han-shu-de-di-gui-he-bi-bao/"/>
+      <url>/2020/02/13/han-shu-de-di-gui-he-bi-bao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="函数的递归"><a href="#函数的递归" class="headerlink" title="函数的递归"></a>函数的递归</h1><p>函数的递归是指在函数中调用函数自己</p><p>从定义上我们就可以看出,一个函数在外部被调用，在里面还需要调用自己，那么它就会在内部一直反复调用自身，因此我们要限制递归的条件，不能无限被调用。</p><h2 id="递归的条件"><a href="#递归的条件" class="headerlink" title="递归的条件"></a>递归的条件</h2><p>递归有两大条件</p><ol><li>递归的停止条件,在什么时候停止调用自己,但是只有停止条件不行,我们还需要每一次递归后都一步步接近这个条件，所以一般递归问题我们都会反向思考,每次递归的过程都会一步一步的将问题所简化</li><li>调用递归的条件,就是我们想要在什么时候调用自己</li></ol><h4 id="递归的举例"><a href="#递归的举例" class="headerlink" title="递归的举例"></a>递归的举例</h4><p>我对递归的理解就是,在你执行一个函数的过程中,中间需要你去调用另外一个函数,但是本身并没有被执行完，那么就会暂时将自己压下来去等待中间函数的调用,在中间函数执行过程中,又没有执行完成就去调用另一个函数,当前函数又会被压,如此反复循环,等到达终止条件时,最后一个调用执行完成会从当前为起点往回依次执行完</p><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>            n <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span>            <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token punctuation">}</span>            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p>图解步骤<br><img src="https://raw.githubusercontent.com/Lycra-98/picbed/master/blogimg/%E9%80%92%E5%BD%92%E6%A1%88%E4%BE%8B.png" alt=""></p><h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>闭包的简单理解就是函数的嵌套,一个函数能访问到另一个函数中的局部变量。</p><p>这里有一个局部变量的概念，就是局部作用域即函数作用域,一般来说函数作用域在函数调用的时候被创建,这个时候这个作用域的变量会被开辟一个内存空间去保存,在函数调用完成后，函数作用域就会销毁,同时该变量也会被销毁，释放这个内存空间，这是一般情况。</p><p>闭包就是延续了变量的生命周期，使其嵌套的函数能够访问到这个局部变量，尽管这个函数已经被调用,在函数调用完成时,闭包现象就是能继续访问里面的局部变量,说明变量没有被销毁，还存在意味着内存空间还存着它，造成了内存泄露。</p><p>来看一下代码体验</p><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            <span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>            <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                n<span class="token operator">++</span><span class="token punctuation">;</span>                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token punctuation">}</span>        <span class="token punctuation">}</span><span class="token number">2</span><span class="token keyword">var</span> v1 <span class="token operator">=</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//接收函数的返回值即inner函数</span><span class="token comment" spellcheck="true">//调用inner函数</span><span class="token function">v1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>；<span class="token comment" spellcheck="true">//能够访问到变量n 输出11，此时n变为11</span><span class="token function">v2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//n = 11没有被销毁,输出12</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>node.js第二天的学习</title>
       <link href="/2020/02/12/node.js02/"/>
       <url>/2020/02/12/node.js02/</url>

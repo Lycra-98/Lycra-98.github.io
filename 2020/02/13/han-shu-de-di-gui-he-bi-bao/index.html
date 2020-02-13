@@ -4,10 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="node.js第二天的学习, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
-    <meta name="description" content="ip地址和域名
-ip地址是每个服务器都特有的表示，客户端同ip地址可以找到指定的服务器，而域名则是网址名，一般都是将域名转换为ip地址才能找到服务器
-端口就是服务器提供给客户端的一些服务类型，比如客户端浏览器要想向服务器发送web请求，那么">
+    <meta name="keywords" content="函数的递归和闭包, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
+    <meta name="description" content="函数的递归函数的递归是指在函数中调用函数自己
+从定义上我们就可以看出,一个函数在外部被调用，在里面还需要调用自己，那么它就会在内部一直反复调用自身，因此我们要限制递归的条件，不能无限被调用。
+递归的条件递归有两大条件
+
+递归的停止条件,在什">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +17,7 @@ ip地址是每个服务器都特有的表示，客户端同ip地址可以找到�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>node.js第二天的学习 | 帅强的避难营</title>
+    <title>函数的递归和闭包 | 帅强的避难营</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -305,12 +307,12 @@ ip地址是每个服务器都特有的表示，客户端同ip地址可以找到�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">node.js第二天的学习</h1>
+                    <h1 class="description center-align post-title">函数的递归和闭包</h1>
                 </div>
             </div>
         </div>
@@ -427,12 +429,12 @@ ip地址是每个服务器都特有的表示，客户端同ip地址可以找到�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/node-js/">
-                                <span class="chip bg-color">node.js</span>
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
                             </a>
                         
-                            <a href="/tags/http%E5%8D%8F%E8%AE%AE/">
-                                <span class="chip bg-color">http协议</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -443,8 +445,8 @@ ip地址是每个服务器都特有的表示，客户端同ip地址可以找到�
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/node-js/" class="post-category">
-                                node.js
+                            <a href="/categories/javascript/" class="post-category">
+                                javascript
                             </a>
                         
                     </div>
@@ -456,7 +458,7 @@ ip地址是每个服务器都特有的表示，客户端同ip地址可以找到�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-12
+                    2020-02-13
                 </div>
                 
 
@@ -473,61 +475,39 @@ ip地址是每个服务器都特有的表示，客户端同ip地址可以找到�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>ip地址和域名</p>
-<p>ip地址是每个服务器都特有的表示，客户端同ip地址可以找到指定的服务器，而域名则是网址名，一般都是将域名转换为ip地址才能找到服务器</p>
-<p>端口就是服务器提供给客户端的一些服务类型，比如客户端浏览器要想向服务器发送web请求，那么这个时候服务器就会有对应的web服务端口(80端口)去接收这个请求，再比如浏览器向服务器发送了发送邮件的请求，那么服务器就会有一个专门处理邮件问题的端口去接受这个请求。</p>
-<p>url</p>
-<p>统一资源定位符</p>
-<p>就是服务器端资源所在的位置，一般由网络协议、ip/域名：端口、资源所在位置等组成</p>
-<p>在开发阶段我们自己的电脑如果安装服务器端的运行环境就可以用来创建接收客户端信息的对象，来响应客户端的请求，本地服务器的域名为localhost 本地ip127.0.0.1    可以用localhost来访问到自己的电脑就是开发者自己电脑上的本地服务器</p>
-<p>创建网站服务器</p>
-<p>首先需要引入http模块，使用creatServer()创建服务器对象，然后监听客户端请求事件，事件处理函数中有两个参数，一个是请求对象，一个响应对象，简单的用响应对象做出响应,然后监听我们的端口(3000),这样一来简单web服务器搭建好了,利用本地域名进行访问</p>
-<p>可以用请求对象获取请求类型请求地址请求消息等等</p>
-<p>可以用响应对象对客户端返回一些信息，如响应头中修改状态码和响应报文的一些信息</p>
-<p>一般用on方法绑定一些事件</p>
-<h3 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a><strong>http协议</strong></h3><p>http协议相当于服务器与客户端之间沟通的桥梁、沟通的规范，超文本传输协议,超文本就相当于html</p>
-<p>客户端向服务器端请求数据，服务器接收这个请求并可以做出响应,请求或响应的数据块成为<strong>报文</strong></p>
-<p><strong>请求报文</strong>客户端向服务器发出的请求</p>
-<p>请求头中的信息和响应头中的信息一般是键值对形式对象存在的</p>
-<p>请求方式，告诉服务器这次请求的目的，GET(请求数据)常见的客户端请求数据就是输入网址 post(发送数据)，一般使用post方式更加安全</p>
-<p>一般输入网址为客户端的get请求，表单提交为post请求</p>
-<p><strong>响应报文</strong></p>
-<p>一般响应报文主要是http状态码的形式返回客户端</p>
-<ul>
-<li>200 请求成功</li>
-<li>404 请求的资源没有被找到</li>
-<li>500 服务器端错误</li>
-<li>400 客户端请求有语法错误</li>
-</ul>
-<p>请求参数分为get请求参数和post请求参数</p>
-<p><strong>get请求参数</strong></p>
-<p>一般在浏览器请求地址的时候,地址后面会有请求参数？uname=caoqiang&amp;age=18    以&amp;分隔的键值对形式</p>
-<p>因为这个参数是在url中,因此需要引入url模块来处理这个参数，变成我们想要的对象形式,用parse()方法解析url地址，返回url的信息是一个对象，加第二个参数为true就能将请求参数转化为对象形式</p>
-<p><strong>post请求参数</strong></p>
-<p>格式与请求参数一样，放在请求报文中，而不是放在地址栏中,因此我们需要引用querystring模块去将这个字符串解析成对象,在发送post请求的时候,需要data事件(在传递请求参数的时候触发)和end事件(传递参数结束时触发)</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//引入查询字符串模块</span>
-<span class="token keyword">const</span> querystring <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'querystring'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> app <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'request'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//定义一个字符串来进行拼接，因为传递的参数有很多</span>
-    <span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//请求监听data时end事件</span>
-    req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> params <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//传递时进行拼接</span>
-        str <span class="token operator">+</span><span class="token operator">=</span> params<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-    req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//传递结束时进行解析成对象</span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>querystring<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'ok'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我的第一个服务器创建成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                <h1 id="函数的递归"><a href="#函数的递归" class="headerlink" title="函数的递归"></a>函数的递归</h1><p>函数的递归是指在函数中调用函数自己</p>
+<p>从定义上我们就可以看出,一个函数在外部被调用，在里面还需要调用自己，那么它就会在内部一直反复调用自身，因此我们要限制递归的条件，不能无限被调用。</p>
+<h2 id="递归的条件"><a href="#递归的条件" class="headerlink" title="递归的条件"></a>递归的条件</h2><p>递归有两大条件</p>
+<ol>
+<li>递归的停止条件,在什么时候停止调用自己,但是只有停止条件不行,我们还需要每一次递归后都一步步接近这个条件，所以一般递归问题我们都会反向思考,每次递归的过程都会一步一步的将问题所简化</li>
+<li>调用递归的条件,就是我们想要在什么时候调用自己</li>
+</ol>
+<h4 id="递归的举例"><a href="#递归的举例" class="headerlink" title="递归的举例"></a>递归的举例</h4><p>我对递归的理解就是,在你执行一个函数的过程中,中间需要你去调用另外一个函数,但是本身并没有被执行完，那么就会暂时将自己压下来去等待中间函数的调用,在中间函数执行过程中,又没有执行完成就去调用另一个函数,当前函数又会被压,如此反复循环,等到达终止条件时,最后一个调用执行完成会从当前为起点往回依次执行完</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            n <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>图解步骤<br><img src="https://raw.githubusercontent.com/Lycra-98/picbed/master/blogimg/%E9%80%92%E5%BD%92%E6%A1%88%E4%BE%8B.png" alt=""></p>
+<h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>闭包的简单理解就是函数的嵌套,一个函数能访问到另一个函数中的局部变量。</p>
+<p>这里有一个局部变量的概念，就是局部作用域即函数作用域,一般来说函数作用域在函数调用的时候被创建,这个时候这个作用域的变量会被开辟一个内存空间去保存,在函数调用完成后，函数作用域就会销毁,同时该变量也会被销毁，释放这个内存空间，这是一般情况。</p>
+<p>闭包就是延续了变量的生命周期，使其嵌套的函数能够访问到这个局部变量，尽管这个函数已经被调用,在函数调用完成时,闭包现象就是能继续访问里面的局部变量,说明变量没有被销毁，还存在意味着内存空间还存着它，造成了内存泄露。</p>
+<p>来看一下代码体验</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                n<span class="token operator">++</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token number">2</span>
+<span class="token keyword">var</span> v1 <span class="token operator">=</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//接收函数的返回值即inner函数</span>
+<span class="token comment" spellcheck="true">//调用inner函数</span>
+<span class="token function">v1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>；<span class="token comment" spellcheck="true">//能够访问到变量n 输出11，此时n变为11</span>
+<span class="token function">v2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//n = 11没有被销毁,输出12</span></code></pre>
 
             </div>
             <hr/>
@@ -553,7 +533,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lycra-98.github.io/2020/02/12/node.js02/">https://lycra-98.github.io/2020/02/12/node.js02/</a>
+                    <a href="https://lycra-98.github.io/2020/02/13/han-shu-de-di-gui-he-bi-bao/">https://lycra-98.github.io/2020/02/13/han-shu-de-di-gui-he-bi-bao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -591,12 +571,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/node-js/">
-                                    <span class="chip bg-color">node.js</span>
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
                                 </a>
                             
-                                <a href="/tags/http%E5%8D%8F%E8%AE%AE/">
-                                    <span class="chip bg-color">http协议</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -637,9 +617,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/02/13/han-shu-de-di-gui-he-bi-bao/">
                     <div class="card-image">
@@ -661,9 +642,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -676,6 +657,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -698,19 +680,21 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/12/da-jian-hexo-bo-ke-01/">
+                <a href="/2020/02/12/node.js02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="初始搭建hexo博客">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="node.js第二天的学习">
                         
-                        <span class="card-title">初始搭建hexo博客</span>
+                        <span class="card-title">node.js第二天的学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一步准备工作首先下载node.js运行环境,去官网下载长期稳定版,node安装好中自带npm包管理工具,因为hexo博客框架是基于node.js的，另外还需要下载git,确认这两个本电脑都已经安装可以去看本地path环境变量是否存在两者路
+                            ip地址和域名
+ip地址是每个服务器都特有的表示，客户端同ip地址可以找到指定的服务器，而域名则是网址名，一般都是将域名转换为ip地址才能找到服务器
+端口就是服务器提供给客户端的一些服务类型，比如客户端浏览器要想向服务器发送web请求，那么
                         
                     </div>
                     <div class="publish-info">
@@ -721,8 +705,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    hexo博客
+                            <a href="/categories/node-js/" class="post-category">
+                                    node.js
                                 </a>
                             
                             
@@ -732,8 +716,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/node-js/">
+                        <span class="chip bg-color">node.js</span>
+                    </a>
+                    
+                    <a href="/tags/http%E5%8D%8F%E8%AE%AE/">
+                        <span class="chip bg-color">http协议</span>
                     </a>
                     
                 </div>
