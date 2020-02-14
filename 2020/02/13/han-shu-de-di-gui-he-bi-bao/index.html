@@ -482,7 +482,7 @@
 <li>递归的停止条件,在什么时候停止调用自己,但是只有停止条件不行,我们还需要每一次递归后都一步步接近这个条件，所以一般递归问题我们都会反向思考,每次递归的过程都会一步一步的将问题所简化</li>
 <li>调用递归的条件,就是我们想要在什么时候调用自己</li>
 </ol>
-<h4 id="递归的举例"><a href="#递归的举例" class="headerlink" title="递归的举例"></a>递归的举例</h4><p>我对递归的理解就是,在你执行一个函数的过程中,中间需要你去调用另外一个函数,但是本身并没有被执行完，那么就会暂时将自己压下来去等待中间函数的调用,在中间函数执行过程中,又没有执行完成就去调用另一个函数,当前函数又会被压,如此反复循环,等到达终止条件时,最后一个调用执行完成会从当前为起点往回依次执行完</p>
+<h4 id="递归的举例"><a href="#递归的举例" class="headerlink" title="递归的举例"></a>递归的举例</h4><p>我对递归的理解就是,在你执行一个函数的过程中,中间需要你去调用另外一个函数,但是本身并没有被执行完，那么就会暂时将自己压下来去等待中间函数的调用,在中间函数执行过程中,又没有执行完成就去调用另一个函数,当前函数又会被压下,如此反复循环,等到达终止条件时,最后一个调用执行完成会从当前为起点往回依次执行完之前之前被压下的函数</p>
 <pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
             n <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span>
@@ -493,18 +493,8 @@
         <span class="token punctuation">}</span>
         <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>图解步骤<br><img src="https://raw.githubusercontent.com/Lycra-98/picbed/master/blogimg/%E9%80%92%E5%BD%92%E6%A1%88%E4%BE%8B.png" alt=""></p>
-<p><strong>斐波那契数列</strong></p>
-<pre class=" language-js"><code class="language-js">        <span class="token comment" spellcheck="true">/*
-            第一项1 第二项1 第三项2 第四项3 第五项5 第六项8 第七项13
-            从第三项开始2 = 1 + 1   第二项 + 第一项
-            第四项3 = 2 + 1     第三项 + 第二项
-            因此从第三项开始后面的数等于前面两项之和
-            递归公式
-            f(3) = f(2) + f(1)  f(4) = f(3) + f(2)
-               ....
-            f(n) = f(n -1) + f(n - 2)
-            递归结束条件为n = 1 和 n = 2
-        */</span>
+<p><strong>斐波那契数列</strong><br>            1,1,2,3,5,8,13<br>​            第一项1 第二项1 第三项2 第四项3 第五项5 第六项8 第七项13<br>​            从第三项开始2 = 1 + 1   第二项 + 第一项<br>​            第四项3 = 2 + 1     第三项 + 第二项<br>​            因此从第三项开始后面的数等于前面两项之和<br>​            递归公式<br>​            f(3) = f(2) + f(1)  f(4) = f(3) + f(2)<br>​               ….<br>​            f(n) = f(n -1) + f(n - 2)<br>​            递归结束条件为n = 1 和 n = 2</p>
+<pre class=" language-js"><code class="language-js">
         <span class="token keyword">function</span> <span class="token function">fibonacc</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> n <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 <span class="token comment" spellcheck="true">//第一项和第二项直接返回1</span>
@@ -567,16 +557,8 @@
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//改变了</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>cq<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//原来的没有改变</span></code></pre>
 <p><strong>猴子吃桃问题</strong></p>
-<pre class=" language-js"><code class="language-js">        <span class="token comment" spellcheck="true">/* 猴子吃桃问题：猴子第一天摘下若干个桃子，当即吃了一半，还不过瘾，又多吃了一个，
-        第二天早上又将剩下的桃子吃掉一半，又多吃了一个。以后每天早上都吃前一天剩下的一半零一个。
-        到第10天早上想再吃时，见只剩下一个桃子了。求第一天共摘多少个桃子？ */</span>
-        <span class="token comment" spellcheck="true">//第一天的桃子数量,等于第二天的桃子数量+1乘以二 f(1) = (f(2) + 1) * 2</span>
-        <span class="token comment" spellcheck="true">//第二天的桃子数量,等于第三天的桃子数量+1乘以二 f(2) = (f(3) + 1) * 2</span>
-        <span class="token comment" spellcheck="true">//第三天的桃子数量,等于第四天的桃子数量+1乘以二 f(3) = (f(4) + 1) * 2</span>
-        <span class="token comment" spellcheck="true">//...第十天的桃子数量,等于1                 f(10) = 1</span>
-        <span class="token comment" spellcheck="true">//每天的桃子数量等于后一天桃子数量+1 乘以2    从第十天可以倒推第一天的   当n==10停止递归</span>
-
-
+<p>​    猴子吃桃问题：猴子第一天摘下若干个桃子，当即吃了一半，还不过瘾，又多吃了一个，<br>​        第二天早上又将剩下的桃子吃掉一半，又多吃了一个。以后每天早上都吃前一天剩下的一半零一个。<br>​        到第10天早上想再吃时，见只剩下一个桃子了。求第一天共摘多少个桃子？<br>​        第一天的桃子数量,等于第二天的桃子数量+1乘以二 f(1) = (f(2) + 1) * 2<br>​        第二天的桃子数量,等于第三天的桃子数量+1乘以二 f(2) = (f(3) + 1) * 2<br>​        第三天的桃子数量,等于第四天的桃子数量+1乘以二 f(3) = (f(4) + 1) * 2<br>​        …第十天的桃子数量,等于1                 f(10) = 1<br>​        每天的桃子数量等于后一天桃子数量+1 乘以2    从第十天可以倒推第一天的   当n==10停止递归</p>
+<pre class=" language-js"><code class="language-js">
         <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token comment" spellcheck="true">//第十天停止递归</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
