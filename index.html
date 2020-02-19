@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
-    <meta name="description" content="帅强的避难营">
+    <meta name="description" content="前端小站">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>帅强的避难营</title>
+    <title>前端小站</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -38,7 +38,7 @@
                     
                     <img src="/medias/logo.jpg" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">帅强的避难营</span>
+                    <span class="logo-span">前端小站</span>
                 </a>
             </div>
             
@@ -136,7 +136,7 @@
         
         <img src="/medias/logo.jpg" class="logo-img circle responsive-img">
         
-        <div class="logo-name">帅强的避难营</div>
+        <div class="logo-name">前端小站</div>
         <div class="logo-desc">
             
             强强的个人博客,初学前端知识体系html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js
@@ -444,7 +444,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col s10 offset-s1">
-                            <div class="title center-align">node.js第二天的学习</div>
+                            <div class="title center-align">http协议与报文以及请求参数</div>
                             <div class="description center-align">
                                 
                                     ip地址和域名
@@ -464,22 +464,18 @@ ip地址是每个服务器都特有的表示，客户端同ip地址可以找到�
         
             
             <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('/medias/banner/4.jpg');">
+                 style="background-image: url('/medias/banner/7.jpg');">
                 <div class="container">
                     <div class="row">
                         <div class="col s10 offset-s1">
-                            <div class="title center-align">node.js第一天的学习</div>
+                            <div class="title center-align">cookie与session简单理解</div>
                             <div class="description center-align">
                                 
-                                    进入Node.js的学习node为服务器开发，为后面Ajax后端技术做铺垫
-实现网站的业务逻辑    如登录
-数据的增删改查    如购物车
-node使用javascript语法开发后端应用（有大量开源库可以使用）
-Node是什么node是
+                                    cookie在了解这个知识之前我们首先要知道http协议中客户端与服务器端的联系,通常情况下,在客户端发送一起请求后,服务器端接收了这个请求并作出响应,那么这一次沟通算是完成了,服务器端就与客户端之间没有任何的联系了,你不认识我,我不认识你
                                 
                             </div>
                             <div class="cover-btns">
-                                <a href="/2020/02/10/node01/" class="waves-effect waves-light btn" target="_blank">
+                                <a href="/2020/02/19/cookies/" class="waves-effect waves-light btn" target="_blank">
                                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                                 </a>
                             </div>
@@ -494,41 +490,14 @@ Node是什么node是
                 <div class="container">
                     <div class="row">
                         <div class="col s10 offset-s1">
-                            <div class="title center-align">函数的递归和闭包</div>
+                            <div class="title center-align">Express框架初步使用</div>
                             <div class="description center-align">
                                 
-                                    函数的递归函数的递归是指在函数中调用函数自己
-从定义上我们就可以看出,一个函数在外部被调用，在里面还需要调用自己，那么它就会在内部一直反复调用自身，因此我们要限制递归的条件，不能无限被调用。
-递归的条件递归有两大条件
-
-递归的停止条件,在什
+                                    Express框架express框架提供了一套完整用于开发web网站的api，让开发者创建web服务器比原生node.js更加容易。作为第三方模块,需要用npm下载并在项目中引用,会返回一个网站服务器对象就不用再添加http系统模块来创建了
                                 
                             </div>
                             <div class="cover-btns">
-                                <a href="/2020/02/13/han-shu-de-di-gui-he-bi-bao/" class="waves-effect waves-light btn" target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('/medias/banner/5.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">mongoDB数据库增删改查</div>
-                            <div class="description center-align">
-                                
-                                    mongoDB数据库又称为NoSql数据库,即非关系型数据库,适用于处理大数据,采用json格式来存储数据，契合javascript语法操作，因此很适合node.js的开发者
-操作mongoDB可以通过node.js中提供的数据库API来进
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2020/02/15/node.js03/" class="waves-effect waves-light btn" target="_blank">
+                                <a href="/2020/02/18/node.js05/" class="waves-effect waves-light btn" target="_blank">
                                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                                 </a>
                             </div>
@@ -543,14 +512,20 @@ Node是什么node是
                 <div class="container">
                     <div class="row">
                         <div class="col s10 offset-s1">
-                            <div class="title center-align">Express框架初步使用</div>
+                            <div class="title center-align">多人博客项目前期准备登录和退出功能</div>
                             <div class="description center-align">
                                 
-                                    Express框架express框架提供了一套完整用于开发web网站的api，让开发者创建web服务器比原生node.js更加容易。作为第三方模块,需要用npm下载并在项目中引用,会返回一个网站服务器对象就不用再添加http系统模块来创建了
+                                    项目介绍多人博客管理页面，分为博客前台内容即博客文章列表的展示和文章详细，博客后台内容即博客管理页面,登陆页面，用户管理和文章管理
+项目初始化
+文件夹准备工作
+
+pubilc 静态资源文件夹
+model 数据库操作文件夹
+route 路由文
                                 
                             </div>
                             <div class="cover-btns">
-                                <a href="/2020/02/18/node.js05/" class="waves-effect waves-light btn" target="_blank">
+                                <a href="/2020/02/19/duo-ren-bo-ke-xiang-mu-deng-lu-ji-tui-chu-gong-neng/" class="waves-effect waves-light btn" target="_blank">
                                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                                 </a>
                             </div>
@@ -638,12 +613,12 @@ Node是什么node是
                         <div class="dream">
     
     <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;避难营
+        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;天真有邪
     </div>
     
     <div class="row">
         <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            外面的世界纷纷扰扰，我想自己静一静，沉浸在代码的世界中，我会为了一个bug去抓破脑袋，也会再解决bug后感到满身轻松。每天当我打开vs code我会去细数今天该学些什么，该去做些什么，程序员的世界本就鼓噪乏味只有那些外界人看不懂的代码，我会每天总结今日所学今日所想，从我的避难营中开始记录，我想我会坚持我的笔记，持续更新
+            有种成熟,名叫坠落凡尘,你可知道对我做过什么最残忍,就是你狠狠把我一夜之间变成了大人,奋不顾身的天真瞬间化成一路走来的伤痕,我悼念我的笨
         </div>
     </div>
 </div>
@@ -659,6 +634,85 @@ Node是什么node是
 
 
 
+
+
+<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;推荐文章</div>
+
+<div class="row">
+
+    
+    
+    <div class="col s12" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/17.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/node-js/" class="category">node.js</a>
+                        
+                    
+                </div>
+                <a href="/2020/02/12/node.js02/">
+                    <h3 class="post-title">http协议与报文以及请求参数</h3>
+                </a>
+                <p class="post-description">ip地址和域名
+ip地址是每个服务器都特有的表示，客户端同ip地址可以找到指定的服务器，而域名则是网址名，一般都是将域名转换为ip地址才能找到服务器
+端口就是服务器提供给</p>
+                <a href="/2020/02/12/node.js02/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/2.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/cookie%E5%92%8Csession/" class="category">cookie和session</a>
+                        
+                    
+                </div>
+                <a href="/2020/02/19/cookies/">
+                    <h3 class="post-title">cookie与session简单理解</h3>
+                </a>
+                <p class="post-description">cookie在了解这个知识之前我们首先要知道http协议中客户端与服务器端的联系,通常情况下,在客户端发送一起请求后,服务器端接收了这个请求</p>
+                <a href="/2020/02/19/cookies/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/7.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/Express%E6%A1%86%E6%9E%B6/" class="category">Express框架</a>
+                        
+                    
+                </div>
+                <a href="/2020/02/18/node.js05/">
+                    <h3 class="post-title">Express框架初步使用</h3>
+                </a>
+                <p class="post-description">Express框架express框架提供了一套完整用于开发web网站的api，让开发者创建web服务器比原生node.js更加容易。作为第三</p>
+                <a href="/2020/02/18/node.js05/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
                     </div>
                     
                 </div>
@@ -672,6 +726,106 @@ Node是什么node是
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/02/19/duo-ren-bo-ke-xiang-mu-deng-lu-ji-tui-chu-gong-neng/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="多人博客项目前期准备登录和退出功能">
+                            
+                            <span class="card-title">多人博客项目前期准备登录和退出功能</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                项目介绍多人博客管理页面，分为博客前台内容即博客文章列表的展示和文章详细，博客后台内容即博客管理页面,登陆页面，用户管理和文章管理
+项目初始化
+文件夹准备工作
+
+pubilc 静态资源文件夹
+model 数据库操作文件夹
+route 路由文
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                    网站开发项目
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                            <span class="chip bg-color">项目</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/02/19/cookies/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="cookie与session简单理解">
+                            
+                            <span class="card-title">cookie与session简单理解</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                cookie在了解这个知识之前我们首先要知道http协议中客户端与服务器端的联系,通常情况下,在客户端发送一起请求后,服务器端接收了这个请求并作出响应,那么这一次沟通算是完成了,服务器端就与客户端之间没有任何的联系了,你不认识我,我不认识你
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/cookie%E5%92%8Csession/" class="post-category">
+                                    cookie和session
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/cookie/">
+                            <span class="chip bg-color">cookie</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -746,7 +900,7 @@ Node是什么node是
                             <span class="publish-author">
                                 
                                 <i class="fas fa-user fa-fw"></i>
-                                Lycra-98
+                                渣渣强
                                 
                             </span>
                         </div>
@@ -877,9 +1031,9 @@ Node是什么node是
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="node.js第二天的学习">
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="http协议与报文以及请求参数">
                             
-                            <span class="card-title">node.js第二天的学习</span>
+                            <span class="card-title">http协议与报文以及请求参数</span>
                         </div>
                     </a>
 
@@ -1088,7 +1242,7 @@ Node是什么node是
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
-            <a href="https://lycra-98.github.io" target="_blank">Lycra-98</a>
+            <a href="https://lycra-98.github.io" target="_blank">渣渣强</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>

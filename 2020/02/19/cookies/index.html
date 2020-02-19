@@ -4,9 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="初步使用git, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
-    <meta name="description" content="进入到需要上传到远端的文件,使用全局配置git config –global user.name “github名字”和git config –global user.email “github邮箱”在github上建立远程仓库
-git i">
+    <meta name="keywords" content="cookie与session简单理解, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
+    <meta name="description" content="cookie在了解这个知识之前我们首先要知道http协议中客户端与服务器端的联系,通常情况下,在客户端发送一起请求后,服务器端接收了这个请求并作出响应,那么这一次沟通算是完成了,服务器端就与客户端之间没有任何的联系了,你不认识我,我不认识你">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@ git i">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>初步使用git | 前端小站</title>
+    <title>cookie与session简单理解 | 前端小站</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +303,12 @@ git i">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">初步使用git</h1>
+                    <h1 class="description center-align post-title">cookie与session简单理解</h1>
                 </div>
             </div>
         </div>
@@ -426,8 +425,8 @@ git i">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/cookie/">
+                                <span class="chip bg-color">cookie</span>
                             </a>
                         
                     </div>
@@ -438,8 +437,8 @@ git i">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/git%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%85%B7/" class="post-category">
-                                git项目工具
+                            <a href="/categories/cookie%E5%92%8Csession/" class="post-category">
+                                cookie和session
                             </a>
                         
                     </div>
@@ -451,7 +450,7 @@ git i">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-12
+                    2020-02-19
                 </div>
                 
 
@@ -468,20 +467,30 @@ git i">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="进入到需要上传到远端的文件-使用全局配置"><a href="#进入到需要上传到远端的文件-使用全局配置" class="headerlink" title="进入到需要上传到远端的文件,使用全局配置"></a>进入到需要上传到远端的文件,使用全局配置</h3><p>git config –global user.name “github名字”和git config –global user.email “github邮箱”<br>在github上建立远程仓库</p>
-<p>git init进行本地初始化  建立本地暂存区</p>
-<p>readme.md//这个markdown文件是进行说明的文档</p>
-<p>.git文件存储当前项目的所有版本信息</p>
-<p>本地文件夹叫工作区  git init后的是暂存区 github上创建的仓库是远程仓库</p>
-<p>将工作区的文件提交到暂存区<br>git add 文件名 或者 git add *   表示提交所有文件    git commit -m “提交的描述”</p>
-<h3 id="查看当前工作区的状态"><a href="#查看当前工作区的状态" class="headerlink" title="查看当前工作区的状态"></a>查看当前工作区的状态</h3><p>git status  用于查看当前工作区的文件是否被修改</p>
-<p>如果被修改了可以git add 文件名 重新提交修改过的文件    也可以用git checkout 文件名从暂存区恢复文件到工作区</p>
-<h3 id="git-diff-可以详细查看工作区和暂存区的版本区别-看看哪个文件被修改了-修改了什么内容"><a href="#git-diff-可以详细查看工作区和暂存区的版本区别-看看哪个文件被修改了-修改了什么内容" class="headerlink" title="git diff 可以详细查看工作区和暂存区的版本区别 看看哪个文件被修改了 修改了什么内容"></a>git diff 可以详细查看工作区和暂存区的版本区别 看看哪个文件被修改了 修改了什么内容</h3><h3 id="git-log-查看已经提交到暂存区的历史版本"><a href="#git-log-查看已经提交到暂存区的历史版本" class="headerlink" title="git log 查看已经提交到暂存区的历史版本"></a>git log 查看已经提交到暂存区的历史版本</h3><h3 id="恢复文件到指定的某一个版本"><a href="#恢复文件到指定的某一个版本" class="headerlink" title="恢复文件到指定的某一个版本"></a>恢复文件到指定的某一个版本</h3><p>git reset –hard 版本号 </p>
-<p>检查暂存区所有文件都都没有问题后，就可以将暂存区文件上传到github上，但是要先生成ssh密匙授权本电脑   ssh-keygen -t rsa -C “你github邮箱” 就可以生成本机的ssh密匙然后填写到github的ssh选项中  添加成功后就可以从本机将暂存区的文件传到github远程仓库中</p>
-<h3 id="暂存区-gt-远程仓库"><a href="#暂存区-gt-远程仓库" class="headerlink" title="暂存区 =&gt; 远程仓库"></a>暂存区 =&gt; 远程仓库</h3><p>git remote add origin 远程仓库地址<br>git push -u origin master<br>第一次提交会要求输入github用户和密码  </p>
-<p>第二次提交直接git push即可</p>
-<h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>从远程仓库克隆项目到本地</p>
-<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><p>从远程仓库同步本地代码,即更新代码</p>
+                <h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>在了解这个知识之前我们首先要知道http协议中客户端与服务器端的联系,通常情况下,在客户端发送一起请求后,服务器端接收了这个请求并作出响应,那么这一次沟通算是完成了,服务器端就与客户端之间没有任何的联系了,你不认识我,我不认识你,这个就叫做http协议的无状态性</p>
+<p>为了在请求之后,服务器能认识客户端能与客户端有一定的联系,我们可以看到网站都是在登陆之后在请求别的页面是会出现只有登录后才能访问的数据,这是因为我们在登陆时向服务器端发送了请求,服务器端在接受这个请求的时候开出了一块空间来存储这个请求,然后把这个空间编了一个特有并且唯一标识的名字id,将这个名字一起响应给客户端,这个名字会伴随客户端下一次请求一起传给服务器端,那么服务器就会根据这个id去找对应的空间里存储的信息,找到了说明你之前登陆过,那么我已经认识你了,我们之间是有联系的,你就可以访问登录之后的数据。我们可以把这个在服务器端存放请求信息看着一个房间,然后有一个特定房间号交给客户端,一个房间号只能对应一个房间,这样客户端就有唯一凭证去跟服务器端联系,下一次请求带着对应房间号去找对应即可.</p>
+<p>这就是cookie与session的联系</p>
+<p>cookie就是用来存放房间号的,是服务器端生成房间号并把这个房间号存到给客户端的cookie中，就是说cookie是客户端开辟的一个空间来存服务器端的给出那个房间号的也就是sessionID，房间就是session对象,是由服务器端开辟的空间，所以客户端在第一次请求服务器还没作出响应时是没有cookie的,只有服务器作出了响应cookie中才会有数据，那么下一次请求就会携带这个cookie中的数据，去服务器端看房间号找对应的房间</p>
+<p><img src="https://raw.githubusercontent.com/Lycra-98/picbed/master/blogimg/1582112565(1)%20-%20%E5%89%AF%E6%9C%AC.jpg" alt=""></p>
+<p>上图在我没有登陆的时候,打开开发者工具找到cookie这一项可以看到是没有值,因为没有做出请求,那么在我们按下登录向服务端请求时,并且服务端做出了响应,这个时候cookies中就有值了,这个value值就是经过加密的房间号,对应唯一的那个房间即session对象</p>
+<p><img src="https://raw.githubusercontent.com/Lycra-98/picbed/master/blogimg/1582112815(1).jpg" alt=""></p>
+<p>不难看出一般cookie都是由域名方式存在的,并且cookie都是由保留时间的,如果没有设置保留时间,在浏览器关闭的时候客户端会把这个cookie释放的，那么再去打开浏览器这个值是没有的</p>
+<p>第二次请求就会带着这个cookie去请求了,服务器端会解析这个cookie中的房间号然后去找对应房间，找到了说明之前来过,没找到就说明不认识</p>
+<p><img src="https://raw.githubusercontent.com/Lycra-98/picbed/master/blogimg/1582113035(1).jpg" alt=""></p>
+<p>记住以下几点</p>
+<ol>
+<li><p>cookie是客户端开辟的空间来存放服务器给的房间号的</p>
+</li>
+<li><p>请求的时候cookie会在请求头中一起传给服务器端</p>
+<p><img src="https://raw.githubusercontent.com/Lycra-98/picbed/master/blogimg/1582113485(1).jpg" alt=""></p>
+</li>
+<li><p>服务器会解析传过来的值提取出房间号即对应的sessionid去寻找对应的对象信息</p>
+</li>
+<li><p>这样一来在完成一次请求后,服务器端就认识了客户端,客户端也认识了服务器端,两者之间就有了联系</p>
+</li>
+<li><p>在用户退出时删除session和对应的cookie即可,那么这个cookie代表房间号就没了就进不去了,服务器就不认识了</p>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -507,7 +516,7 @@ git i">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lycra-98.github.io/2020/02/12/git/">https://lycra-98.github.io/2020/02/12/git/</a>
+                    <a href="https://lycra-98.github.io/2020/02/19/cookies/">https://lycra-98.github.io/2020/02/19/cookies/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,8 +554,8 @@ git i">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/cookie/">
+                                    <span class="chip bg-color">cookie</span>
                                 </a>
                             
                         </div>
@@ -592,7 +601,7 @@ git i">
         repo: 'Lycra-98.github.io',
         owner: 'Lycra-98',
         admin: "Lycra-98",
-        id: '2020-02-12T15-00-00',
+        id: '2020-02-19T16-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -617,31 +626,37 @@ git i">
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/12/da-jian-hexo-bo-ke-01/">
+                <a href="/2020/02/19/duo-ren-bo-ke-xiang-mu-deng-lu-ji-tui-chu-gong-neng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="初始搭建hexo博客">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="多人博客项目前期准备登录和退出功能">
                         
-                        <span class="card-title">初始搭建hexo博客</span>
+                        <span class="card-title">多人博客项目前期准备登录和退出功能</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一步准备工作首先下载node.js运行环境,去官网下载长期稳定版,node安装好中自带npm包管理工具,因为hexo博客框架是基于node.js的，另外还需要下载git,确认这两个本电脑都已经安装可以去看本地path环境变量是否存在两者路
+                            项目介绍多人博客管理页面，分为博客前台内容即博客文章列表的展示和文章详细，博客后台内容即博客管理页面,登陆页面，用户管理和文章管理
+项目初始化
+文件夹准备工作
+
+pubilc 静态资源文件夹
+model 数据库操作文件夹
+route 路由文
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-19
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    hexo博客
+                            <a href="/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                    网站开发项目
                                 </a>
                             
                             
@@ -651,8 +666,8 @@ git i">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">项目</span>
                     </a>
                     
                 </div>
@@ -666,35 +681,31 @@ git i">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/10/node01/">
+                <a href="/2020/02/18/node.js05/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="node.js第一天的学习">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Express框架初步使用">
                         
-                        <span class="card-title">node.js第一天的学习</span>
+                        <span class="card-title">Express框架初步使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            进入Node.js的学习node为服务器开发，为后面Ajax后端技术做铺垫
-实现网站的业务逻辑    如登录
-数据的增删改查    如购物车
-node使用javascript语法开发后端应用（有大量开源库可以使用）
-Node是什么node是
+                            Express框架express框架提供了一套完整用于开发web网站的api，让开发者创建web服务器比原生node.js更加容易。作为第三方模块,需要用npm下载并在项目中引用,会返回一个网站服务器对象就不用再添加http系统模块来创建了
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/node-js/" class="post-category">
-                                    node.js
+                            <a href="/categories/Express%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    Express框架
                                 </a>
                             
                             
@@ -704,12 +715,8 @@ Node是什么node是
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/node-js/">
-                        <span class="chip bg-color">node.js</span>
-                    </a>
-                    
-                    <a href="/tags/npm/">
-                        <span class="chip bg-color">npm</span>
+                    <a href="/tags/Express-node-js/">
+                        <span class="chip bg-color">-Express -node.js</span>
                     </a>
                     
                 </div>

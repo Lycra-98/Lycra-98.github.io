@@ -4,9 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="初步使用git, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
-    <meta name="description" content="进入到需要上传到远端的文件,使用全局配置git config –global user.name “github名字”和git config –global user.email “github邮箱”在github上建立远程仓库
-git i">
+    <meta name="keywords" content="多人博客项目前期准备登录和退出功能, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
+    <meta name="description" content="项目介绍多人博客管理页面，分为博客前台内容即博客文章列表的展示和文章详细，博客后台内容即博客管理页面,登陆页面，用户管理和文章管理
+项目初始化
+文件夹准备工作
+
+pubilc 静态资源文件夹
+model 数据库操作文件夹
+route 路由文">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +19,7 @@ git i">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>初步使用git | 前端小站</title>
+    <title>多人博客项目前期准备登录和退出功能 | 前端小站</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +309,12 @@ git i">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">初步使用git</h1>
+                    <h1 class="description center-align post-title">多人博客项目前期准备登录和退出功能</h1>
                 </div>
             </div>
         </div>
@@ -426,8 +431,8 @@ git i">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                                <span class="chip bg-color">项目</span>
                             </a>
                         
                     </div>
@@ -438,8 +443,8 @@ git i">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/git%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%85%B7/" class="post-category">
-                                git项目工具
+                            <a href="/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                网站开发项目
                             </a>
                         
                     </div>
@@ -451,7 +456,7 @@ git i">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-12
+                    2020-02-19
                 </div>
                 
 
@@ -468,20 +473,145 @@ git i">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="进入到需要上传到远端的文件-使用全局配置"><a href="#进入到需要上传到远端的文件-使用全局配置" class="headerlink" title="进入到需要上传到远端的文件,使用全局配置"></a>进入到需要上传到远端的文件,使用全局配置</h3><p>git config –global user.name “github名字”和git config –global user.email “github邮箱”<br>在github上建立远程仓库</p>
-<p>git init进行本地初始化  建立本地暂存区</p>
-<p>readme.md//这个markdown文件是进行说明的文档</p>
-<p>.git文件存储当前项目的所有版本信息</p>
-<p>本地文件夹叫工作区  git init后的是暂存区 github上创建的仓库是远程仓库</p>
-<p>将工作区的文件提交到暂存区<br>git add 文件名 或者 git add *   表示提交所有文件    git commit -m “提交的描述”</p>
-<h3 id="查看当前工作区的状态"><a href="#查看当前工作区的状态" class="headerlink" title="查看当前工作区的状态"></a>查看当前工作区的状态</h3><p>git status  用于查看当前工作区的文件是否被修改</p>
-<p>如果被修改了可以git add 文件名 重新提交修改过的文件    也可以用git checkout 文件名从暂存区恢复文件到工作区</p>
-<h3 id="git-diff-可以详细查看工作区和暂存区的版本区别-看看哪个文件被修改了-修改了什么内容"><a href="#git-diff-可以详细查看工作区和暂存区的版本区别-看看哪个文件被修改了-修改了什么内容" class="headerlink" title="git diff 可以详细查看工作区和暂存区的版本区别 看看哪个文件被修改了 修改了什么内容"></a>git diff 可以详细查看工作区和暂存区的版本区别 看看哪个文件被修改了 修改了什么内容</h3><h3 id="git-log-查看已经提交到暂存区的历史版本"><a href="#git-log-查看已经提交到暂存区的历史版本" class="headerlink" title="git log 查看已经提交到暂存区的历史版本"></a>git log 查看已经提交到暂存区的历史版本</h3><h3 id="恢复文件到指定的某一个版本"><a href="#恢复文件到指定的某一个版本" class="headerlink" title="恢复文件到指定的某一个版本"></a>恢复文件到指定的某一个版本</h3><p>git reset –hard 版本号 </p>
-<p>检查暂存区所有文件都都没有问题后，就可以将暂存区文件上传到github上，但是要先生成ssh密匙授权本电脑   ssh-keygen -t rsa -C “你github邮箱” 就可以生成本机的ssh密匙然后填写到github的ssh选项中  添加成功后就可以从本机将暂存区的文件传到github远程仓库中</p>
-<h3 id="暂存区-gt-远程仓库"><a href="#暂存区-gt-远程仓库" class="headerlink" title="暂存区 =&gt; 远程仓库"></a>暂存区 =&gt; 远程仓库</h3><p>git remote add origin 远程仓库地址<br>git push -u origin master<br>第一次提交会要求输入github用户和密码  </p>
-<p>第二次提交直接git push即可</p>
-<h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>从远程仓库克隆项目到本地</p>
-<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><p>从远程仓库同步本地代码,即更新代码</p>
+                <h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>多人博客管理页面，分为博客前台内容即博客文章列表的展示和文章详细，博客后台内容即博客管理页面,登陆页面，用户管理和文章管理</p>
+<h3 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h3><ol>
+<li><p>文件夹准备工作</p>
+<ul>
+<li>pubilc 静态资源文件夹</li>
+<li>model 数据库操作文件夹</li>
+<li>route 路由文件夹</li>
+<li>views 模板文件夹</li>
+</ul>
+</li>
+<li><p>生成项目描述及依赖包详情文件package.json</p>
+</li>
+<li><p>下载项目所需依赖包</p>
+<pre><code>npm i express mongoose art-template express-art-tamplate</code></pre></li>
+<li><p>使用express创建网站服务器</p>
+</li>
+<li><p>构建模块化路由及文章列表展示部分路由和用户管理路由，两个大方面的主路由地址</p>
+<ul>
+<li>home.js 博客文章展示路由</li>
+<li>admin.js 博客管理路由</li>
+</ul>
+</li>
+<li><p>构建页面模块</p>
+<p>在模板中的静态资源外链文件写相对路径都是相对于浏览器地址而言的(因为是由浏览器解析的),因此所有外链文件应该写绝对路径而不是相对路径    /表示绝对路径</p>
+<p>将模版公共部分(头部和侧边栏)抽离到common文件夹中用include引入到模板中,html骨架也抽离出来到common文件夹,用extend继承block填充</p>
+</li>
+</ol>
+<h3 id="功能模块"><a href="#功能模块" class="headerlink" title="功能模块"></a>功能模块</h3><h4 id="登录功能"><a href="#登录功能" class="headerlink" title="登录功能"></a>登录功能</h4><ol>
+<li><p>登录时输入用户邮箱和密码,去数据库查找是否有该邮箱和密码,因此需要连接数据库,并创建用户集合</p>
+</li>
+<li><p>用户集合规则根据用户页面来设计</p>
+<ul>
+<li>username 用户名  必填字段 规定最大最小长度</li>
+<li>email 邮箱 必填字段 作为登录的唯一凭证值在数据库中是唯一的 设置unique</li>
+<li>password 密码 必填</li>
+<li>role 角色 ‘admin’为超级管理员 ‘normal’ 普通用户</li>
+<li>state 状态 如果是0表示启用状态 如果是1表示禁用状态</li>
+</ul>
+</li>
+<li><p>给登陆表单添加提交地址,以及请求方式post,和name属性</p>
+</li>
+<li><p>点击提交后,客户端先判断用户是否填写了邮箱和地址，有一项没有填就阻止程序向下运行,给出错误信息，jq中获取表单中所有表单控件的方法serializeArray(),该方法返回的是一个数组,数组里面存着对象有几个表单控件就有几个对象形式是{name: ‘eamil’, value: ‘123312@qq.com’},我们想要变成这样的{eamil: <a href="mailto:123312@qq.com">123312@qq.com</a>},因此我们需要遍历数组并重新定义一个空对象,将每一个数组元素的name属性值变为对象的属性,value属性变为属性值</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//获取登录表单值方法</span>
+<span class="token keyword">function</span> <span class="token function">getValue</span><span class="token punctuation">(</span>form<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//定义一个空对象</span>
+    <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//使用serializeArray()方法获取所有表单控件值返回一个对象</span>
+    <span class="token keyword">let</span> arr <span class="token operator">=</span> form<span class="token punctuation">.</span><span class="token function">serializeArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//将数组元素name属性值作为obj的属性,value属性值作为属性值</span>
+    arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>item <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        obj<span class="token punctuation">[</span>item<span class="token punctuation">.</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>接着获取返回值判断邮箱或者密码的长度是否等于0，等于零就弹出警告框并return</p>
+</li>
+<li><p>为防止客户端禁止运行脚本,在提交数据后服务端也需要判断用户是否填写了邮箱和地址，有一项没填就给客户端做出错误响应,阻止程序运行</p>
+<p>根据post请求参数,判断参数的长度是否为0,如果为0,就设置400状态码及客户端出错响应一个error页面给客户端,并阻止程序向下运行</p>
+<pre class=" language-js"><code class="language-js"> <span class="token comment" spellcheck="true">//接受请求参数</span>
+    <span class="token keyword">let</span> <span class="token punctuation">{</span>email<span class="token punctuation">,</span> password<span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//防止禁止浏览器脚本,服务端二次验证,如果邮箱或密码的长度为零,跳转到错误页面,阻止程序向下运行</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>email<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">||</span> password <span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">'admin/error'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>msg<span class="token punctuation">:</span> <span class="token string">'错误警告:邮箱地址或密码错误'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>服务器端判断完之后,根据填的邮箱地址去匹配用户的信息，如果没有找到该邮箱地址，响应错误</p>
+<p>客户端或者服务器端验证通过时,我们获取这个邮箱地址,根据这个邮箱地址去数据库查询对应的用户信息,如果用户信息为空则返回一个空对象那么就响应错误页面阻止程序向下运行</p>
+</li>
+<li><p>找到了邮箱地址后将数据库的信息(正确邮箱对应的用户是唯一值)对用户的密码进行比对</p>
+<p>如果返回的用户信息对象不为空,比对密码，这里比对的是加密的密码，使用第三方模块bcrypt中的compare方法,即你登陆的密码与查询到的用户的密码进行比对，返回的是一个布尔值,比对成功返回true,不成则是false</p>
+</li>
+<li><p>比对成功就登陆成功</p>
+<p>为true就登陆成功,登陆成功后先引用express-session模块进行cookie的全局配置,拦截所有请求调用session方法进行配置,这样请求对象下就有一个session属性的对象,如果用户登陆成功,就在请求对象下的session属性下存取用户的用户名,然后在去请求其他页面看这个数据能否在其他模板中显示,登陆成功之后还要将用户的信息存储到locals属性下供所有模板头部使用这个变量,最后重定向回用户列表页</p>
+</li>
+<li><p>比对失败登陆失败，响应error页面并阻止程序向下运行</p>
+<pre class=" language-js"><code class="language-js"> <span class="token keyword">let</span> user <span class="token operator">=</span> <span class="token keyword">await</span> User<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span><span class="token punctuation">{</span>email<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//如果user不为空对象,说明查找出来了该信息</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//对加密密码进行比较compare()方法第一个参数明文密码,第二个参数加密的密码,返回布尔值</span>
+        <span class="token comment" spellcheck="true">//true为匹配成功,false为匹配失败</span>
+        <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> bcrypt<span class="token punctuation">.</span><span class="token function">compare</span><span class="token punctuation">(</span>password<span class="token punctuation">,</span> user<span class="token punctuation">.</span>password<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">//比对密码成功就登陆成功</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//登陆成功即可访问该请求对象下存储的用户名</span>
+            req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>username <span class="token operator">=</span> user<span class="token punctuation">.</span>username<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//将用户信息储存在local对象下攻所有模板使用</span>
+            <span class="token comment" spellcheck="true">//这里不用引用app.js，请求对象下的app属性就是我们创建的那个服务器对象</span>
+            req<span class="token punctuation">.</span>app<span class="token punctuation">.</span>locals<span class="token punctuation">.</span>userInfo <span class="token operator">=</span> user<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//登陆成功之后重定向</span>
+            res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'/admin/user'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//密码比对失败</span>
+            res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">'admin/error'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>msg<span class="token punctuation">:</span> <span class="token string">'错误警告:邮箱地址或密码错误'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//user为空对象说明没有查找出来</span>
+        res<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">'admin/error'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>msg<span class="token punctuation">:</span> <span class="token string">'错误警告:邮箱地址或密码错误'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+</li>
+</ol>
+<h4 id="数据库密码加密操作"><a href="#数据库密码加密操作" class="headerlink" title="数据库密码加密操作"></a>数据库密码加密操作</h4><p>使用bcrypt第三方模块进行哈希加密</p>
+<p>bcrypt 依赖的其他环境(安装这些环境才能使用这个模块)</p>
+<ol>
+<li><p>python 2.x</p>
+</li>
+<li><p>node-gyp npm install -g node-gyp</p>
+</li>
+<li><p>windows-build-tools</p>
+</li>
+<li><p>npm install –global –production windows-build-tools</p>
+</li>
+<li><pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> bcrypt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'bcrypt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//生成随机字符串genSalt()</span>
+    <span class="token comment" spellcheck="true">//接受一个数值作为参数,数值越大随机字符串复杂度越大</span>
+    <span class="token comment" spellcheck="true">//返回生成的随机字符串,支持promise对象</span>
+    <span class="token keyword">const</span> salt <span class="token operator">=</span> <span class="token keyword">await</span> bcrypt<span class="token punctuation">.</span><span class="token function">genSalt</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//对密码进行加密hash('明文密码','随机字符串')</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> bcrypt<span class="token punctuation">.</span><span class="token function">hash</span><span class="token punctuation">(</span><span class="token string">'123456'</span><span class="token punctuation">,</span> salt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>salt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ol>
+<h4 id="退出功能"><a href="#退出功能" class="headerlink" title="退出功能"></a>退出功能</h4><p>删除客户端和服务器端的联系,即在用户点击退出登陆时，设置退出功能的路由,在该路由下删除该用户信息的session和cookies然后重定向回登陆页面即可,在用户点击退出登陆的时候a连接跳转地址为/admin/logout路由,在这个get请求的路由下设置用户退出登陆功能,使用请求对象下的session属性下的destroy()方法删除session，参数是一个回调函数,在删除session后调用该函数使用响应对象下的clearCookie()删除对应的cookie，重定向回登陆页面</p>
+<pre class=" language-js"><code class="language-js">req<span class="token punctuation">.</span>session<span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//删除cookie,connect.sid('想要删除的cookie名字')</span>
+        res<span class="token punctuation">.</span><span class="token function">clearCookie</span><span class="token punctuation">(</span><span class="token string">'connect.sid'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//重定向会登陆页面</span>
+        res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'/admin/login'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<h4 id="登录拦截"><a href="#登录拦截" class="headerlink" title="登录拦截"></a>登录拦截</h4><p>在用户没有登陆的情况下,除了登陆页面其他的博客管理页面均不能访问,用app.use拦截所有/admin的请求,写在路由之前不然就会先执行路由了,如果用户的访问地址不是登陆页面或者登陆成功(即session对象下没有username这个属性)那么就重定向会登陆页面不能访问其他博客管理页面,否则就是登陆状态next()走后面的中间件</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">!==</span> <span class="token string">'/login'</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>req<span class="token punctuation">.</span>session<span class="token punctuation">.</span>username<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span><span class="token string">'/admin/login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//放行交给下一个中间件</span>
+        <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span></code></pre>
+<p>最后再将一些功能代码剪切出去写在不同js文件中即不同模块中然后导出供其他模块使用,主要是路由模块和主模块的代码，让这两部分的代码看起来更加干净</p>
 
             </div>
             <hr/>
@@ -507,7 +637,7 @@ git i">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lycra-98.github.io/2020/02/12/git/">https://lycra-98.github.io/2020/02/12/git/</a>
+                    <a href="https://lycra-98.github.io/2020/02/19/duo-ren-bo-ke-xiang-mu-deng-lu-ji-tui-chu-gong-neng/">https://lycra-98.github.io/2020/02/19/duo-ren-bo-ke-xiang-mu-deng-lu-ji-tui-chu-gong-neng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,8 +675,8 @@ git i">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                                    <span class="chip bg-color">项目</span>
                                 </a>
                             
                         </div>
@@ -592,7 +722,7 @@ git i">
         repo: 'Lycra-98.github.io',
         owner: 'Lycra-98',
         admin: "Lycra-98",
-        id: '2020-02-12T15-00-00',
+        id: '2020-02-19T17-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -613,46 +743,54 @@ git i">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/12/da-jian-hexo-bo-ke-01/">
+                <a href="/2020/02/19/duo-ren-bo-ke-xiang-mu-deng-lu-ji-tui-chu-gong-neng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="初始搭建hexo博客">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="多人博客项目前期准备登录和退出功能">
                         
-                        <span class="card-title">初始搭建hexo博客</span>
+                        <span class="card-title">多人博客项目前期准备登录和退出功能</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一步准备工作首先下载node.js运行环境,去官网下载长期稳定版,node安装好中自带npm包管理工具,因为hexo博客框架是基于node.js的，另外还需要下载git,确认这两个本电脑都已经安装可以去看本地path环境变量是否存在两者路
+                            项目介绍多人博客管理页面，分为博客前台内容即博客文章列表的展示和文章详细，博客后台内容即博客管理页面,登陆页面，用户管理和文章管理
+项目初始化
+文件夹准备工作
+
+pubilc 静态资源文件夹
+model 数据库操作文件夹
+route 路由文
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    hexo博客
+                            <a href="/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                    网站开发项目
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">项目</span>
                     </a>
                     
                 </div>
@@ -666,35 +804,31 @@ git i">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/10/node01/">
+                <a href="/2020/02/19/cookies/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="node.js第一天的学习">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="cookie与session简单理解">
                         
-                        <span class="card-title">node.js第一天的学习</span>
+                        <span class="card-title">cookie与session简单理解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            进入Node.js的学习node为服务器开发，为后面Ajax后端技术做铺垫
-实现网站的业务逻辑    如登录
-数据的增删改查    如购物车
-node使用javascript语法开发后端应用（有大量开源库可以使用）
-Node是什么node是
+                            cookie在了解这个知识之前我们首先要知道http协议中客户端与服务器端的联系,通常情况下,在客户端发送一起请求后,服务器端接收了这个请求并作出响应,那么这一次沟通算是完成了,服务器端就与客户端之间没有任何的联系了,你不认识我,我不认识你
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/node-js/" class="post-category">
-                                    node.js
+                            <a href="/categories/cookie%E5%92%8Csession/" class="post-category">
+                                    cookie和session
                                 </a>
                             
                             
@@ -704,12 +838,8 @@ Node是什么node是
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/node-js/">
-                        <span class="chip bg-color">node.js</span>
-                    </a>
-                    
-                    <a href="/tags/npm/">
-                        <span class="chip bg-color">npm</span>
+                    <a href="/tags/cookie/">
+                        <span class="chip bg-color">cookie</span>
                     </a>
                     
                 </div>
