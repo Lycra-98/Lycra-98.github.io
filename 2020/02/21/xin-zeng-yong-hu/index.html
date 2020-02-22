@@ -723,35 +723,30 @@ app<span class="token punctuation">.</span><span class="token function">use</spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/02/21/xin-zeng-yong-hu/">
+                <a href="/2020/02/22/duo-ren-bo-ke-03/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="新增用户和用户列表展示分页功能">
+                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="用户修改删除和文章管理增删改">
                         
-                        <span class="card-title">新增用户和用户列表展示分页功能</span>
+                        <span class="card-title">用户修改删除和文章管理增删改</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            新增用户功能
-在用户列表页面给新增用户按钮添加链接,跳转到用户编辑页面
-
-新增get请求路由用户编辑页面/user-edit路由,渲染用户编辑页面
-//呈现用户编辑页路由
-admin.get('/user-edit', require('.
+                            修改用户
+在用户列表页面点击操作修改时,跳转链接带上get请求参数id,因为修改用户页面和添加用户页面是同一模板,因此要通过id来判断,如果get请求参数中有id值就是用户修改页面,查询到该id代表用户信息,将用户信息显示到页面中给每个表单
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -764,12 +759,11 @@ admin.get('/user-edit', require('.
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/node-js-javascript-%E9%A1%B9%E7%9B%AE/">
-                        <span class="chip bg-color">-node.js -javascript -项目</span>
+                    <a href="/tags/%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">项目</span>
                     </a>
                     
                 </div>
