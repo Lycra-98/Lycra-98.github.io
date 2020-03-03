@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>vue组件开发基础</title>
+      <link href="/2020/03/03/vue-zu-jian-kai-fa-ji-chu/"/>
+      <url>/2020/03/03/vue-zu-jian-kai-fa-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<h3 id="组件化开发"><a href="#组件化开发" class="headerlink" title="组件化开发"></a>组件化开发</h3><p>不同的功能封装到不同的组件当中，将各个组件组合在一起形成一个完整的应用，组件就相当于html标签，vue实例就是顶级组件，相同组件可以进行复用并且数据私有化</p><h3 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h3><p>全局组件的注册,使用Vue.component方法进行全局的注册，第一个参数为组件的名称，第二个参数是一个对象，对象的中的属性跟new Vue里的一样除了el属性没有以外，不过都需要一个模板属性template，在里面可以直接写字符串形式的vue模板</p><p>局部组件的注册，在实例对象下的components属性中，是一个对象，属性名是组件的名称，使用短横线-的方式命名，属性值是组件的内容是一个对象可以抽离出去在外面定义，只能在父模板中使用，只能在定义组局部组件的父组件下使用，不能在其他组件中使用</p><p>组件的使用直接在html页面的模板下写组件的名称双标签形式，在html页面中的组件只能使用短横线的形式，也可以在字符串模板中使用就是在template属性中使用</p><p>组件的注意事项</p><ul><li>注册组件内容的data属性必须是一个函数，同时需要返回一个对象，这就导致组件是可以复用的并且每个复用的组件中data返回的对象数据都是私有的</li><li>组件模板中必须要有一个根元素进行包裹，就是在最外面写一个容器div标签</li><li>可以使用模板字符串的形式写template属性中的值</li><li>局部组件只能在父组件中使用，只能在元素挂载的父模板下使用组件标签</li><li>组件命名可以使用驼峰命名只能在字符串模板中使用，在html模板下需要转化成短横线-的形式才能使用该组件，所以一般在取组件名字的时候推荐使用短横线的形式命名，dom元素是不支持大小写的</li></ul><h3 id="组件之间传值"><a href="#组件之间传值" class="headerlink" title="组件之间传值"></a>组件之间传值</h3><h4 id="父组件向子组件中传值"><a href="#父组件向子组件中传值" class="headerlink" title="父组件向子组件中传值"></a>父组件向子组件中传值</h4><p>父组件通过属性的形式在子组件中传入值，也可以通过属性绑定的形式在子组件中传值，可以传入数字、数组、对象等数据类型的值，同时在子组件中需要添加props属性来接收父组件传入的值，该属性是一个数组可以存多个值，然后子组件可以在自己的字符串模板中使用props里的值，props属性中的名字如果是驼峰命名，在html模板中应该转化成短横线“ - ”的形式，在字符串模板中不用转化</p><p>所有自定义的驼峰命名在html模板中都没有效果，因为html模板不识别大小写</p><h4 id="子组件向父组件传递数据"><a href="#子组件向父组件传递数据" class="headerlink" title="子组件向父组件传递数据"></a>子组件向父组件传递数据</h4><p>在子组件中需要使用$emit()方法来自定义一个事件,但是在子组件中需要通过一个事件去触发这个自定义事件，所以一般子组件的自定义事件都是写在事件绑定的后面,$emit()第一个参数为自定义的事件名称,第二个参数为需要传递的数据,那么在父组件中就需要来正常监听这个自定义的事件,直接在父组件模板中绑定该自定义事件名称使用$event进行对传过来的数据的接收,就是事件对象存着传递过来的数据</p><h4 id="非父子组件之间的传递数据"><a href="#非父子组件之间的传递数据" class="headerlink" title="非父子组件之间的传递数据"></a>非父子组件之间的传递数据</h4><p>相当于兄弟组件之间,核心还是通过$emit()方法进行自定义事件数据的传递，但是这个操作不由两个组件本身去执行，而是由第三方事件中心去完成，这个事件中心就是new Vue()不带参数,在A组件中想要传递数据给B组件,那么在A组件中就需要通过一个事件去触发事件中心的$emit()方法,事件中心的$emit()将这个自定义的事件名称和传递的数据传给了B组件，在B组件中需要在生命周期mounted钩子函数中来监听事件中心传递过来的自定义事件，使用事件$on()方法来监听，第一个参数是A中$emit()方法自定义事件的名称,第二个参数是事件处理函数,事件处理函数中有个参数来接收A组件传递过来的数据，在事件处理函数中对该数据进行操作，反过来B想传递数据给A是一样的</p><p>子组件向父组件传递数据 和非父子之间传递数据其实都是通过$emit()方法来进行自定义事件，对自定义事件的监听对传递过来的数据进行一系列操作，只不过后者是通过新创建的vue实例即事件中心来控制的, 重点就是利用生命周期钩子函数mounted来完成对自定义事件的监听,在模板渲染完成之后才能进行监听事件</p><h3 id="插槽的使用"><a href="#插槽的使用" class="headerlink" title="插槽的使用"></a>插槽的使用</h3><p>可以将父组件传递过来的内容显示在子组件模版中,在定义子组件的时候，在模板中添加<slot>标签，该标签内部的内容是在使用子组件的时候,在子组件标签中传递的</p><p>例如这是一个alert-box组件的模板</p><pre class=" language-html"><code class="language-html">                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>ERROR:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">></span></span>                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre><p>在父模板中使用组件传递内容</p><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>alert-box</span><span class="token punctuation">></span></span>代码出错<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>alert-box</span><span class="token punctuation">></span></span></code></pre><p>那么<alert-box>之间的内容就会被渲染到子模版的<slot>标签之中</p><h4 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h4><p>就是在定义子组件的时候,在子组件模板中,给<slot>标签加上name属性,这样这个插槽就有对应的名字了,在向该插槽传递内容的时候，需要在标签上加上slot属性，slot=具体的name属性值,去匹配子组件模板中的slot标签</p><p>例如这是一个base-layout组件的模板，有名字叫header和footer的插槽，还有一个默认插槽没有name属性</p><pre class=" language-html"><code class="language-html">                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span>                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre><p>那么在父组件中这样匹配对应有名字的插槽，那么在子组件模板中header标签内部就被渲染了两个h1标签表示头部标题，main部分因为没有指定slot的名字就是默认渲染子模版没有name属性的slot标签，footer标签内被渲染了两个p标签尾部内容1</p><pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>base<span class="token operator">-</span>layout<span class="token operator">></span>            <span class="token operator">&lt;</span>template slot<span class="token operator">=</span><span class="token string">"header"</span><span class="token operator">></span>                <span class="token operator">&lt;</span>h1<span class="token operator">></span>头部标题<span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>                <span class="token operator">&lt;</span>h1<span class="token operator">></span>头部标题<span class="token number">2</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>            <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>            <span class="token operator">&lt;</span>p<span class="token operator">></span>我是主体内容<span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>            <span class="token operator">&lt;</span>p<span class="token operator">></span>我是主体内容<span class="token number">2</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>            <span class="token operator">&lt;</span>template slot<span class="token operator">=</span><span class="token string">"footer"</span><span class="token operator">></span>                <span class="token operator">&lt;</span>p <span class="token operator">></span>我是尾部内容<span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>                <span class="token operator">&lt;</span>p <span class="token operator">></span>我是尾部内容<span class="token number">2</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>            <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>        <span class="token operator">&lt;</span><span class="token operator">/</span>base<span class="token operator">-</span>layout<span class="token operator">></span></code></pre><p>就是在给子模板的slot标签加上name属性，对应的在使用组件时，需要传递slot属性来匹配name的值</p><h4 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h4><p>允许在父组件对子组件的模板内容进行操作,在定义子组件模板的时候你想要把哪一部分的内容和数据开放出去给父组件能访问到</p><p>这是一个friut-list组件的模板item这个数据只能在子模板中使用并访问到，但是我想要动态的控制这里面的内容,就需要把这一部分的内容放在slot标签中</p><pre class=" language-html"><code class="language-html">                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item.id<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item in list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                                {{item.name}}                             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre><p>子模板内容变成这种形式,在slot标签中进行属性绑定,属性的名字可以自己定义,那么属性的值就是item这个数据，这个绑定的属性list就叫做插槽prop</p><pre class=" language-html"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item.id<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item in list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">:list</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                                {{item.name}}                                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">></span></span>                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre><p>那么相应的在父模板中操作这个数据的时候需要加上slot-scope这个属性,这个属性接受了传递过来的插槽prop，我们可以这个属性值自定义名字，只不过我们一般约定叫slotProps，那么这个值就接受了子组件模板中属性绑定的那个值这里就是list属性，list属性绑定的就是item这个数据,就是说slotProps可以访问到item数据</p><pre class=" language-html"><code class="language-html"> <span class="token comment" spellcheck="true">&lt;!-- 在父组件对插槽中的item数据进行操作 需要在template标签中加上slot-scope属性,后面的名字可以自定义,一般约定叫slotProps--></span>            <span class="token comment" spellcheck="true">&lt;!-- slotProps中就存取了list这个属性,而这个属性里面绑定的就是item数据就是子组件模板中的数据 --></span>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">slot-scope</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>slotProps<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>slotProps.list.id<span class="token punctuation">=</span><span class="token punctuation">=</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>current<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>                {{slotProps.list.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-else</span><span class="token punctuation">></span></span>{{slotProps.list.name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span></code></pre><p>组件之间传值和插槽是不同的，组件之间的传值一般都是传一些数据，而插槽是对模板中的内容进行操作和内容的传递</p><p><strong>注意在vue2.6以上这些在标签中的slot属性都可以使用v-slot指令去替换</strong></p><p>v-slot:插槽名        就是匹配具名插槽</p><p>v-slot:插槽名=”slotProps”    就是作用域插槽接收传递过来的插槽prop中的数据</p><h3 id="目前所学的全局API和配置"><a href="#目前所学的全局API和配置" class="headerlink" title="目前所学的全局API和配置"></a>目前所学的全局API和配置</h3><p>KeyCodes     定义自定义的键盘事件修饰符的时候Vue.config.KeyCodes.修饰符名字 = keycode码</p><p>Vue.directive        全局设置自定义指令</p><p>Vue.filter        全局设置过滤器</p><p>Vue.component    全局注册组件</p><p>Vue.set            响应式的更新对象和数组中的数据</p><p>局部注册当成实例的属性选项提供</p><p>directives        局部设置自定义指令</p><p>filters            局部设置过滤器</p><p>components        局部注册组件            </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue.js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ajax同源与跨域请求</title>
       <link href="/2020/02/27/ajax03/"/>
       <url>/2020/02/27/ajax03/</url>
@@ -69,14 +94,14 @@
       
       <categories>
           
-          <category> 网站开发项目 </category>
+          <category> node.js网站开发项目 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 项目 </tag>
+            <tag> node.js项目 </tag>
             
         </tags>
       
@@ -94,14 +119,14 @@
       
       <categories>
           
-          <category> 网站开发项目 </category>
+          <category> node.js网站开发项目 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 项目 </tag>
+            <tag> node.js项目 </tag>
             
         </tags>
       
@@ -119,14 +144,14 @@
       
       <categories>
           
-          <category> 网站开发项目 </category>
+          <category> node.js网站开发项目 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 项目 </tag>
+            <tag> node.js项目 </tag>
             
         </tags>
       
@@ -144,18 +169,14 @@
       
       <categories>
           
-          <category> 网站开发项目 </category>
+          <category> node.js网站开发项目 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> node.js </tag>
-            
-            <tag> javascript </tag>
-            
-            <tag> 项目 </tag>
+            <tag> node.js项目 </tag>
             
         </tags>
       
@@ -173,14 +194,14 @@
       
       <categories>
           
-          <category> 网站开发项目 </category>
+          <category> node.js网站开发项目 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 项目 </tag>
+            <tag> node.js项目 </tag>
             
         </tags>
       
