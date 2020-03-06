@@ -482,7 +482,8 @@
 </ul>
 <h3 id="组件之间传值"><a href="#组件之间传值" class="headerlink" title="组件之间传值"></a>组件之间传值</h3><h4 id="父组件向子组件中传值"><a href="#父组件向子组件中传值" class="headerlink" title="父组件向子组件中传值"></a>父组件向子组件中传值</h4><p>父组件通过属性的形式在子组件中传入值，也可以通过属性绑定的形式在子组件中传值，可以传入数字、数组、对象等数据类型的值，同时在子组件中需要添加props属性来接收父组件传入的值，该属性是一个数组可以存多个值，然后子组件可以在自己的字符串模板中使用props里的值，props属性中的名字如果是驼峰命名，在html模板中应该转化成短横线“ - ”的形式，在字符串模板中不用转化</p>
 <p>所有自定义的驼峰命名在html模板中都没有效果，因为html模板不识别大小写</p>
-<h4 id="子组件向父组件传递数据"><a href="#子组件向父组件传递数据" class="headerlink" title="子组件向父组件传递数据"></a>子组件向父组件传递数据</h4><p>在子组件中需要使用$emit()方法来自定义一个事件,但是在子组件中需要通过一个事件去触发这个自定义事件，所以一般子组件的自定义事件都是写在事件绑定的后面,$emit()第一个参数为自定义的事件名称,第二个参数为需要传递的数据,那么在父组件中就需要来正常监听这个自定义的事件,直接在父组件模板中绑定该自定义事件名称使用$event进行对传过来的数据的接收,就是事件对象存着传递过来的数据</p>
+<h4 id="子组件向父组件传递数据"><a href="#子组件向父组件传递数据" class="headerlink" title="子组件向父组件传递数据"></a>子组件向父组件传递数据</h4><p>一般不能在子组件直接修改props属性中的数据,要传递数据到父组件，让父组件修改data中的数据</p>
+<p>在子组件中需要使用$emit()方法来自定义一个事件,但是在子组件中需要通过一个事件去触发这个自定义事件，所以一般子组件的自定义事件都是写在事件绑定的后面,$emit()第一个参数为自定义的事件名称,第二个参数为需要传递的数据,那么在父组件中就需要来正常监听这个自定义的事件,直接在父组件模板中绑定该自定义事件名称使用$event进行对传过来的数据的接收,就是事件对象存着传递过来的数据</p>
 <h4 id="非父子组件之间的传递数据"><a href="#非父子组件之间的传递数据" class="headerlink" title="非父子组件之间的传递数据"></a>非父子组件之间的传递数据</h4><p>相当于兄弟组件之间,核心还是通过$emit()方法进行自定义事件数据的传递，但是这个操作不由两个组件本身去执行，而是由第三方事件中心去完成，这个事件中心就是new Vue()不带参数,在A组件中想要传递数据给B组件,那么在A组件中就需要通过一个事件去触发事件中心的$emit()方法,事件中心的$emit()将这个自定义的事件名称和传递的数据传给了B组件，在B组件中需要在生命周期mounted钩子函数中来监听事件中心传递过来的自定义事件，使用事件$on()方法来监听，第一个参数是A中$emit()方法自定义事件的名称,第二个参数是事件处理函数,事件处理函数中有个参数来接收A组件传递过来的数据，在事件处理函数中对该数据进行操作，反过来B想传递数据给A是一样的</p>
 <p>子组件向父组件传递数据 和非父子之间传递数据其实都是通过$emit()方法来进行自定义事件，对自定义事件的监听对传递过来的数据进行一系列操作，只不过后者是通过新创建的vue实例即事件中心来控制的, 重点就是利用生命周期钩子函数mounted来完成对自定义事件的监听,在模板渲染完成之后才能进行监听事件</p>
 <h3 id="插槽的使用"><a href="#插槽的使用" class="headerlink" title="插槽的使用"></a>插槽的使用</h3><p>可以将父组件传递过来的内容显示在子组件模版中,在定义子组件的时候，在模板中添加<slot>标签，该标签内部的内容是在使用子组件的时候,在子组件标签中传递的</p>
@@ -691,12 +692,11 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/03/vue-zu-jian-kai-fa-ji-chu/">
+                <a href="/2020/03/06/webpack-de-shi-yong/">
                     <div class="card-image">
                         
                         
@@ -708,32 +708,30 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            组件化开发不同的功能封装到不同的组件当中，将各个组件组合在一起形成一个完整的应用，组件就相当于html标签，vue实例就是顶级组件，相同组件可以进行复用并且数据私有化
-组件注册全局组件的注册,使用Vue.component方法进行全局的注册
+                            前端工程化就是前端模块化，统一采用E6S模块化规范，不同功能写在不同的js文件，每一个js文件就是单独的模块，模块之间相互独立，如果要想使用模块中的变量和函数，使用export进行模块成员导出，在使用的模块中使用import进行模块成员导入
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-06
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vue-js/" class="post-category">
-                                    vue.js
+                            <a href="/categories/webpack/" class="post-category">
+                                    webpack
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue-js/">
-                        <span class="chip bg-color">vue.js</span>
+                    <a href="/tags/webpack/">
+                        <span class="chip bg-color">webpack</span>
                     </a>
                     
                 </div>
