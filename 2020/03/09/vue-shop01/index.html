@@ -4,9 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="初步使用git, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
-    <meta name="description" content="进入到需要上传到远端的文件,使用全局配置git config –global user.name “github名字”和git config –global user.email “github邮箱”在github上建立远程仓库
-git i">
+    <meta name="keywords" content="vue电商后台管理登录退出功能, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
+    <meta name="description" content="项目初始化使用vue-cli脚手架进行项目的初始化,添加element-ui插件和vue-router插件，添加axios第三方开发依赖，使用git将项目部署到远程代码管理仓库协同开发github或者码云，运行后台服务器，将数据库导入，使用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +13,7 @@ git i">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>初步使用git | 前端小站</title>
+    <title>vue电商后台管理登录退出功能 | 前端小站</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/libs/awesome/css/all.css">
@@ -304,12 +303,12 @@ git i">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">初步使用git</h1>
+                    <h1 class="description center-align post-title">vue电商后台管理登录退出功能</h1>
                 </div>
             </div>
         </div>
@@ -426,8 +425,8 @@ git i">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/vue-js%E9%A1%B9%E7%9B%AE/">
+                                <span class="chip bg-color">vue.js项目</span>
                             </a>
                         
                     </div>
@@ -438,8 +437,8 @@ git i">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/git%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%85%B7/" class="post-category">
-                                git项目工具
+                            <a href="/categories/vue-js%E7%94%B5%E5%95%86%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                vue.js电商后台管理系统
                             </a>
                         
                     </div>
@@ -451,7 +450,7 @@ git i">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-12
+                    2020-03-09
                 </div>
                 
 
@@ -468,21 +467,67 @@ git i">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="进入到需要上传到远端的文件-使用全局配置"><a href="#进入到需要上传到远端的文件-使用全局配置" class="headerlink" title="进入到需要上传到远端的文件,使用全局配置"></a>进入到需要上传到远端的文件,使用全局配置</h3><p>git config –global user.name “github名字”和git config –global user.email “github邮箱”<br>在github上建立远程仓库</p>
-<p>git init进行本地初始化  建立本地暂存区</p>
-<p>readme.md//这个markdown文件是进行说明的文档</p>
-<p>.git文件存储当前项目的所有版本信息</p>
-<p>本地文件夹叫工作区  git init后的是暂存区 github上创建的仓库是远程仓库</p>
-<p>将工作区的文件提交到暂存区<br>git add 文件名 或者 git add *   表示提交所有文件    git commit -m “提交的描述”</p>
-<h3 id="查看当前工作区的状态"><a href="#查看当前工作区的状态" class="headerlink" title="查看当前工作区的状态"></a>查看当前工作区的状态</h3><p>git status  用于查看当前工作区的文件是否被修改</p>
-<p>如果被修改了可以git add 文件名 重新提交修改过的文件    也可以用git checkout 文件名从暂存区恢复文件到工作区</p>
-<h3 id="git-diff-可以详细查看工作区和暂存区的版本区别-看看哪个文件被修改了-修改了什么内容"><a href="#git-diff-可以详细查看工作区和暂存区的版本区别-看看哪个文件被修改了-修改了什么内容" class="headerlink" title="git diff 可以详细查看工作区和暂存区的版本区别 看看哪个文件被修改了 修改了什么内容"></a>git diff 可以详细查看工作区和暂存区的版本区别 看看哪个文件被修改了 修改了什么内容</h3><h3 id="git-log-查看已经提交到暂存区的历史版本"><a href="#git-log-查看已经提交到暂存区的历史版本" class="headerlink" title="git log 查看已经提交到暂存区的历史版本"></a>git log 查看已经提交到暂存区的历史版本</h3><h3 id="恢复文件到指定的某一个版本"><a href="#恢复文件到指定的某一个版本" class="headerlink" title="恢复文件到指定的某一个版本"></a>恢复文件到指定的某一个版本</h3><p>git reset –hard 版本号 </p>
-<p>检查暂存区所有文件都都没有问题后，就可以将暂存区文件上传到github上，但是要先生成ssh密匙授权本电脑   ssh-keygen -t rsa -C “你github邮箱” 就可以生成本机的ssh密匙然后填写到github的ssh选项中  添加成功后就可以从本机将暂存区的文件传到github远程仓库中</p>
-<h3 id="暂存区-gt-远程仓库"><a href="#暂存区-gt-远程仓库" class="headerlink" title="暂存区 =&gt; 远程仓库"></a>暂存区 =&gt; 远程仓库</h3><p>git remote add origin 远程仓库地址<br>git push -u origin master<br>第一次提交会要求输入github用户和密码  </p>
-<p>第二次提交直接git push即可</p>
-<h3 id="创建分支-并将分支推送到远程仓库"><a href="#创建分支-并将分支推送到远程仓库" class="headerlink" title="创建分支 并将分支推送到远程仓库"></a>创建分支 并将分支推送到远程仓库</h3><p>每次项目新完成一个功能需要在一个新分支里进行最后合并到主分支master<br>git checkout -b 新分支名    创建并切换到新分支<br>git branch 查看分支<br>git checkout 分支名 切换分支<br>每次完成一个新分支的功能之后切换到主分支 git checkout master<br>git merge 分支名  进行合并到主分支<br>进入到新创建的分支 将该分支推送到远程分支git push -u origin 远端分支名 第一次推送时 第二次如果修改了该分支直接git push即可</p>
-<h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>从远程仓库克隆项目到本地</p>
-<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><p>从远程仓库同步本地代码,即更新代码</p>
+                <h3 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h3><p>使用vue-cli脚手架进行项目的初始化,添加element-ui插件和vue-router插件，添加axios第三方开发依赖，使用git将项目部署到远程代码管理仓库协同开发github或者码云，运行后台服务器，将数据库导入，使用postman进行接口测试，项目前期准备工作完成</p>
+<p>使用git多人协同开发将项目代码托管到github远程仓库，vue脚手架创建项目内置webpack来开发vue项目</p>
+<h3 id="登录功能"><a href="#登录功能" class="headerlink" title="登录功能"></a>登录功能</h3><p>在不存在跨域问题的时候，http的无状态性可以通过session和cookie来维持用户的登录状态，在创建vue项目的时候是运行在另外一个端口号，因此涉及到跨域问题，使用token来维持的用户的登陆状态</p>
+<ol>
+<li><p>在第一次输入用户名和密码，将登录请求发给服务器端验证是否有该用户如果有就将用户唯一的token命令和登录信息响应给客户端表示登陆成功，客户端存取该用户的token在之后每次请求时携带该token，服务器端验证是否有这个token,如果有就保持联系展示用户登录之后才能看到的数据</p>
+</li>
+<li><p>使用element-ui进行登陆页面的布局,创建登录分支,每次开发一个新功能后都需要创建分支在当前分支中开发,最后合并到主分支中,先查看暂存区是否干净git status，然后使用git checkout -d 分支名 创建并进入分支,git branch查看所有的分支</p>
+</li>
+<li><p>梳理项目结构,删除使用脚手架创建项目默认的一些组件和路由规则</p>
+</li>
+<li><p>创建登录组件login.vue，将组件导入路由文件中,设置/login路由规则,在app跟组件中添加路由占位符,当访问/login时会讲登录组件渲染到app跟组件中,将/网站根目录重定向到/login</p>
+</li>
+<li><p>设置登录组件的背景颜色,画登录盒子样式,居中显示,绘制头像区域样式</p>
+</li>
+<li><p>使用element-ui的表单组件，在登陆表单中需要用到的element-ui组件有Form组件，表单域Form-item组件，Input组件，和Button组件，将这些组件按需导入,修改样式</p>
+</li>
+<li><p>给表单框添加字体图标</p>
+</li>
+<li><p>表单的数据绑定，给form组件绑定一个model属性,该属性为表单对象在data中定义该表单对象，该表单里的每一个表单域的值应该双向绑定到该表单对象的具体属性下</p>
+</li>
+<li><p>element-ui提供了表单组件的验证功能,在form组件中绑定rules属性,该属性为一个验证规则对象,属性名为定义的规则名,属性值为数组,可以定义多条规则,然后需要使用的form-item组件标签使用prop属性对应验证规则名</p>
+<pre class=" language-js"><code class="language-js">rules<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          name<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+              <span class="token comment" spellcheck="true">//required为必填，message错误信息，trigger为什么时候触发验证</span>
+            <span class="token punctuation">{</span> required<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'请输入活动名称'</span><span class="token punctuation">,</span> trigger<span class="token punctuation">:</span> <span class="token string">'blur'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> min<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> max<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">'长度在 3 到 5 个字符'</span><span class="token punctuation">,</span> trigger<span class="token punctuation">:</span> <span class="token string">'blur'</span> <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre>
+</li>
+<li><p>点击重置按钮，重置表单值,使用表单组件引用对象下的resetFields方法可以将所有的字段重置为初始值,和移除验证结果,获取form组件的引用对象可以给form组件设置一个ref属性,该属性关联一个表单组件引用对象,使用this.$refs能获取到该表单组件的引用对象</p>
+</li>
+<li><p>点击登录按钮，使用ref关联表单组件的引用对象,调用引用对象下的validate方法进行在登陆之前的预验证，该方法接受一个回调函数的参数,回调函数第一个参数是一个布尔值为验证的结果,如果为true说明验证成功允许发送登录请求</p>
+</li>
+<li><p>如果预验证成功说明可以发送axios登录请求,导入axios对象，然后将axios方法挂载到Vue构造函数的原型对象中，这样所有的组件中都可以使用this来访问到axios方法了,配置axios的请求根路径，如果请求的返回值的status不等于说明登录失败,等于200才是登陆成功</p>
+</li>
+<li><p>在验证完成后使用Message全局弹框组件设置登陆是否成功的弹框消息,该组件需要全局使用需要挂载在Vue的原型对象中使用其中的一些弹框方法</p>
+</li>
+<li><p>在登录之后将服务器响应的信息中token数据存储在浏览器的sessionStorage中,sessionStorage在浏览器关闭就会使释放空间,我们只需要保证浏览器开着的时候服务器端与客户端能维持登录状态即可，每次发送请求都会客户端携带sessionStorage中的token信息进行访问,服务器端验证成功后就可以访问登陆权限之后的页面了，跳转到home后台管理界面路由</p>
+</li>
+<li><p>设置路由访问权限,设置路由守卫只有登录了之后才能访问/login之外的页面,没有登陆就强制跳转到登陆页面</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 挂载路由导航守卫,控制页面访问权限</span>
+router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// to 要访问的地址</span>
+  <span class="token comment" spellcheck="true">// from 从哪里跳转的地址</span>
+  <span class="token comment" spellcheck="true">// next() 直接放行 next('/login)强制跳回login路由</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">'/login'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">// 获取客户端token判断是否登录</span>
+  <span class="token keyword">const</span> tokenStr <span class="token operator">=</span> window<span class="token punctuation">.</span>sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">)</span>
+  <span class="token comment" spellcheck="true">// 如果没有token强制跳回login页</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>tokenStr<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span>
+  <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+</li>
+</ol>
+<h3 id="退出功能"><a href="#退出功能" class="headerlink" title="退出功能"></a>退出功能</h3><p>清除本地浏览器sessionsStorage的token缓存即可,后续请求不会携带该数据,在跳转到/login页面</p>
+<h4 id="Form组件的使用"><a href="#Form组件的使用" class="headerlink" title="Form组件的使用"></a>Form组件的使用</h4><p>element-ui的Form组件的基本用法,在vue需要用到表单组件的就可以使用Form组件，每一个表单域被Form-item组件包裹，每一个Form-item组件下就是一个表单控件组件，例如Input组件 Button组件 select组件</p>
+<p>添加字体图片如果时input组件可以通过添加属性在prefix-icon前面添加字体图标或者后面suffix-icon等于对应的字体图标值,如果element-ui中没有的字体图标可以去第三方字体图标库中下载</p>
+<p>Form组件的数据绑定,给form标签绑定:model属性该属性为表单绑定对象,该表单组件中所有的表单控件都需要双向绑定v-model到表单绑定对象中</p>
+<p>Form组件的表单验证,给form标签绑定:rules属性该属性为表单验证规则对象，属性值是对应的规则数组，一个相应的规则名中可以有多条规则，在使用规则的时候给需要的form-item组件标签添加prop属性为规则名即可使用form表单组件的规则验证</p>
+<p>Form组件的表单重置，可以使用表单组件的对象下的resetFields来初始化表单控件的值和清除验证规则，给form表单添加ref属性,该属性为表单的引用对象，可以在vue组件实例的$refs下来获取该表单引用对象使用resetFields来进行重置表单</p>
+<p>Form组件的预验证，使用表单引用对象下的validate方法，该方法需要传入一个回调函数,在回调函数中有两个参数第一个是布尔值为是否验证成功，第二个是对象为未验证通过的字段，一般只需要第一个参数，如果第一个参数为true说明验证成功那么就是使用axios发送登录请求了</p>
+<p>ref属性为表单添加表单引用对象用来调用表单组件下的一些方法</p>
 
             </div>
             <hr/>
@@ -508,7 +553,7 @@ git i">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lycra-98.github.io/2020/02/12/git/">https://lycra-98.github.io/2020/02/12/git/</a>
+                    <a href="https://lycra-98.github.io/2020/03/09/vue-shop01/">https://lycra-98.github.io/2020/03/09/vue-shop01/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,8 +591,8 @@ git i">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/vue-js%E9%A1%B9%E7%9B%AE/">
+                                    <span class="chip bg-color">vue.js项目</span>
                                 </a>
                             
                         </div>
@@ -593,7 +638,7 @@ git i">
         repo: 'Lycra-98.github.io',
         owner: 'Lycra-98',
         admin: "Lycra-98",
-        id: '2020-02-12T15-00-00',
+        id: '2020-03-09T10-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -614,46 +659,48 @@ git i">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/12/da-jian-hexo-bo-ke-01/">
+                <a href="/2020/03/09/vue-shop01/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="初始搭建hexo博客">
+                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="vue电商后台管理登录退出功能">
                         
-                        <span class="card-title">初始搭建hexo博客</span>
+                        <span class="card-title">vue电商后台管理登录退出功能</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一步准备工作首先下载node.js运行环境,去官网下载长期稳定版,node安装好中自带npm包管理工具,因为hexo博客框架是基于node.js的，另外还需要下载git,确认这两个本电脑都已经安装可以去看本地path环境变量是否存在两者路
+                            项目初始化使用vue-cli脚手架进行项目的初始化,添加element-ui插件和vue-router插件，添加axios第三方开发依赖，使用git将项目部署到远程代码管理仓库协同开发github或者码云，运行后台服务器，将数据库导入，使用
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    hexo博客
+                            <a href="/categories/vue-js%E7%94%B5%E5%95%86%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                    vue.js电商后台管理系统
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/vue-js%E9%A1%B9%E7%9B%AE/">
+                        <span class="chip bg-color">vue.js项目</span>
                     </a>
                     
                 </div>
@@ -667,35 +714,31 @@ git i">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/10/node01/">
+                <a href="/2020/03/06/webpack-de-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="node.js第一天的学习">
+                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="webpack前端工程化">
                         
-                        <span class="card-title">node.js第一天的学习</span>
+                        <span class="card-title">webpack前端工程化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            进入Node.js的学习node为服务器开发，为后面Ajax后端技术做铺垫
-实现网站的业务逻辑    如登录
-数据的增删改查    如购物车
-node使用javascript语法开发后端应用（有大量开源库可以使用）
-Node是什么node是
+                            前端工程化就是前端模块化，统一采用E6S模块化规范，不同功能写在不同的js文件，每一个js文件就是单独的模块，模块之间相互独立，如果要想使用模块中的变量和函数，使用export进行模块成员导出，在使用的模块中使用import进行模块成员导入
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/node-js/" class="post-category">
-                                    node.js
+                            <a href="/categories/webpack/" class="post-category">
+                                    webpack
                                 </a>
                             
                             
@@ -705,12 +748,8 @@ Node是什么node是
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/node-js/">
-                        <span class="chip bg-color">node.js</span>
-                    </a>
-                    
-                    <a href="/tags/npm/">
-                        <span class="chip bg-color">npm</span>
+                    <a href="/tags/webpack/">
+                        <span class="chip bg-color">webpack</span>
                     </a>
                     
                 </div>
