@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vue常见面经, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
-    <meta name="description" content="http常见状态码1.http常见状态码的含义
+    <meta name="keywords" content="vue春招面经, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
+    <meta name="description" content="http与浏览器1.http常见状态码的含义
 http状态码由3位十进制数字组成，第一个数字表示状态码的分类,后面的两位表示该分类下的不同状态
 1**    信息。服务器收到请求，请继续执行请求
-2**      成功。请求被成功接收并处">
+2**      成功。请求被成功接收并处理">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>vue常见面经 | 前端小站</title>
+    <title>vue春招面经 | 前端小站</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/libs/awesome/css/all.css">
@@ -306,12 +306,12 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vue常见面经</h1>
+                    <h1 class="description center-align post-title">vue春招面经</h1>
                 </div>
             </div>
         </div>
@@ -437,15 +437,6 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E9%9D%A2%E7%BB%8F/" class="post-category">
-                                面经
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
@@ -453,7 +444,7 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-19
+                    2020-03-22
                 </div>
                 
 
@@ -470,7 +461,7 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="http常见状态码"><a href="#http常见状态码" class="headerlink" title="http常见状态码"></a>http常见状态码</h3><p>1.http常见状态码的含义</p>
+                <h3 id="http与浏览器"><a href="#http与浏览器" class="headerlink" title="http与浏览器"></a>http与浏览器</h3><p>1.http常见状态码的含义</p>
 <p>http状态码由3位十进制数字组成，第一个数字表示状态码的分类,后面的两位表示该分类下的不同状态</p>
 <p>1**    信息。服务器收到请求，请继续执行请求</p>
 <p>2**      成功。请求被成功接收并处理</p>
@@ -526,12 +517,12 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
 <ul>
 <li>Vue实例从创建到销毁的过程，这过程中会触发一系列钩子函数</li>
 <li>beforeCreate是new Vue()之后触发的第一个钩子函数,此时的methods、data、computed、watch中数据和函数都无法被访问</li>
-<li>created在创建实例之后被调用，此时已经完成了数据的检测，可以读取数据，更新数据但是不会触发updata，可以在此阶段获取一些初始数据，但是无法跟DOM进行交互，如果非要在此阶段访问DOM可以使用vm.$nextTick来访问DOM元素</li>
+<li>created在创建实例之后被调用，此时已经完成了数据的观测，可以读取数据，更新数据但是不会触发update，可以在此阶段获取一些初始数据，但是无法跟DOM进行交互，如果非要在此阶段访问DOM可以使用vm.$nextTick来访问DOM元素</li>
 <li>beforeMount再挂载之前被调用，在此之前template模板已导入渲染函数中进行编译，此时虚拟DOM已经创建完成，即将开始进行数据渲染</li>
 <li>Mouted挂载之后被调用，此时真实的DOM元素已经被挂载在页面中，数据完成双向绑定，可以在这里获取数据发送ajax请求</li>
 <li>beforeUpdate在响应式数据更新之前触发，此时页面上还都是旧数据，虚拟DOM还没有开始重新渲染</li>
 <li>updated数据更新之后触发，此时页面中已经是更新之后的新数据，DOM已经更新完成</li>
-<li>beforeDestory销毁vue实例之前触发，此时实例还是可以完成被使用，可以在此阶段做一些善后工作比如清除定时器</li>
+<li>beforeDestory销毁vue实例之前触发，此时实例还是可以完全被使用，可以在此阶段做一些善后工作比如清除定时器</li>
 <li>destoryed实例销毁完成后触发，此时只剩DOM空壳，所有的数据绑定和事件监听都已经被解除，组件被拆解，子实例都被销毁</li>
 </ul>
 </li>
@@ -545,7 +536,7 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
 </ul>
 </li>
 <li><p>v-if和v-show的区别</p>
-<p>v-if通过条件判断是否渲染DOM元素，频繁的进行DOM元素的销毁和渲染消耗性能，而v-show只渲染一次DOM元素，来控制css样式display进行元素的显示和隐藏，优化性能</p>
+<p>v-if通过条件判断是否渲染DOM元素，频繁的进行DOM元素的销毁和创建比较消耗性能，而v-show只渲染一次DOM元素，来控制css样式display进行元素的显示和隐藏，优化性能</p>
 </li>
 <li><p>组件中的data为什么是一个函数</p>
 <p>当组件被多次复用时,会创建出多个实例，但是本质上这些实例属于一个构造函数,如果data直接是一个对象，修改对象中的值会影响到所有的实例，因此为了保证组件不同实例之间的data不冲突，data必须是一个函数并且需要返回一个私有数据对象</p>
@@ -557,11 +548,11 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
 <p>原生中事件绑定是通过addEventListener绑定到真实元素上，Vue中组件的事件绑定通过自定义的$on方法来实现的</p>
 </li>
 <li><p>vue模板编译的原理</p>
-<p>简单的说，Vue的模板编译过程就是将template转化为rander函数的过程，首先解析模板，生成AST数(一种使用JavaScript对象的形式来描述整个模板)，在解析过程中使用大量的正则表达式进行解析，在遇到标签、文本的时候都会执行对应的钩子进行相关处理，对AST树进行优化之后将其转化为可执行的代码</p>
+<p>简单的说，Vue的模板编译过程就是将template转化为rander函数的过程，首先解析模板，生成AST树(一种使用JavaScript对象的形式来描述整个模板)，在解析过程中使用大量的正则表达式进行解析，在遇到标签、文本的时候都会执行对应的钩子进行相关处理，对AST树进行优化之后将其转化为可执行的代码</p>
 </li>
 <li><p>虚拟DOM和key属性的作用</p>
 <p>由于在浏览器中操作DOM很昂贵的，频繁的操作DOM，会产生一定的性能问题,这就是虚拟DOM的产生原因，再vue2.x中虚拟DOM的本质就是用原生的js对象来描述一个DOM节点，是对真实的DOM的一层抽象</p>
-<p>key属性的作用是为了尽可能的复用DOM元素，用来表示每一个DOM节点具有唯一标识</p>
+<p>key属性的作用是为了高效的更新虚拟DOM，用来表示每一个DOM节点具有唯一标识，让diff算法可以正确的识别此节点</p>
 </li>
 <li><p>keep-alive了解吗</p>
 <p>vue内置组件,可以实现组件的缓存，被其包裹的组件进行切换时不会对当前组件进行卸载，用于保存组件的状态或避免重新渲染</p>
@@ -570,7 +561,7 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
 <li><p>Vue中组件生命周期调用顺序</p>
 <p>组件的调用顺序是先父后子        渲染完成的顺序是先子后父</p>
 <p>组件的销毁操作是先父后子        销毁完成的顺序是先子后父</p>
-<p>加载渲染过程：父beforeCreadte-&gt;父created-&gt;父beforeMount-&gt;子beforeCreadte-&gt;子created-&gt;子beforeMount-&gt;子mounted-&gt;父mounted</p>
+<p>加载渲染过程：父beforeCreate-&gt;父created-&gt;父beforeMount-&gt;子beforeCreate-&gt;子created-&gt;子beforeMount-&gt;子mounted-&gt;父mounted</p>
 <p>子组件更新过程：父beforeUpdate-&gt;子beforeUpdate-&gt;子updated-&gt;父updated</p>
 <p>父组件更新过程：父beforeUpdate-&gt;父updated</p>
 <p>销毁过程：父beforeDistory-&gt;子beforeDistory-&gt;子distoryed-&gt;父distoryed</p>
@@ -621,6 +612,38 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
 <p>hash路由就是location.hash中#后面的值，URL地址中#后面的</p>
 <p>history路由实际上采用了HTML5提供的API来实现，主要的API有history.pushState()和history.replaceState()</p>
 </li>
+<li><p>如何让css样式只在当前组件中起作用</p>
+<p>再style中加上scoped</p>
+</li>
+<li><p>如何获取dom</p>
+<p>添加ref属性引用对象，再调用this.$refs来进行获取</p>
+</li>
+<li><p>vue-loader是什么？使用它的用途？</p>
+<p>vue-loader是webpack中vue文件的加载器，可以将template、script、style转换为js模块 </p>
+<p>用途：js可以写一些es6语法，style样式可支持less或scss，template可以加jade等，jade也是一种html，只不过没有开始标记和结束标记</p>
+</li>
+<li><p>vue中双向数据绑定是如何实现的</p>
+<p>vue数据双向绑定就是通过数据劫持结合发布-订阅模式来实现的，也就是说数据和视图同步，当数据发生变化时，视图也会发生变化，当试图变化时，数据也会跟着变化。核心就是使用了Object.defineProperty()方法</p>
+<p>发布-订阅模式被称为观察者模式，它定义的是一种一对多的依赖关系，当一个状态发生变化时，所有依赖该状态的对象都会得到通知</p>
+<p>Object.defineProperty()方法，可以用于在对象上增加新属性，和修改对象上现有属性，返回该对象</p>
+</li>
+<li><p>单页面应用和多页面应用的区别和优缺点</p>
+<p>单页面应用(SPA),只有一个主页面的应用，刚开始浏览器就需要加载所有必须的html、css、js，所有的内容都包含在这个主页面中，但是编写代码的时候是分开编写的，使用路由功能来动态的加载，路由跳转渲染不同内容在主页面中，实现局部资源刷新</p>
+<p>多页面应用(MPA)，有多个页面的应用，在页面进行跳转的时候是加载整个网页</p>
+<p>单页面应用优点：用户体验很好，内容的变化不会加载整个网页，对服务器压力较小，前后端分离</p>
+<p>缺点：不利用seo，提高了页面的复杂度，不支持浏览器前进后退功能，初始加载消耗较大</p>
+</li>
+<li><p>v-if和v-for的优先级</p>
+<p>如果v-if和v-for同时使用，v-for拥有更高的优先级，这就意味着v-if会重复的在v-for中执行，因此不推荐同时使用</p>
+</li>
+<li><p>assets和static的区别</p>
+<p>相同点：两者都是用来存放静态资源的</p>
+<p>不同点：在项目打包过程中，会将assets中的文件进行打包上传，打包可以理解为代码压缩，代码格式化，最终会将压缩好的assets中的文件中放在static中上传到服务器端。但是在static文件夹中的文件在打包过程不会进行代码压缩、代码格式化等操作，而是直接可以上传到服务器端，因此在打包工程中static提高了打包效率，但是文件的体积会比较大</p>
+<p>建议: 将项目中tmplate中需要的js，样式图片等文件可以放在assets中，将一些第三方文件已经处理过的可以放在static中，例如字体图标库</p>
+</li>
+<li><p>vue-router和location.href有什么区别</p>
+<p>location.href是直接跳转到另一个页面，加载刷新了整个页面，而vue-router有两种模式，一种是hash模式，主要使用router.push方法来跳转实现局部页面刷新，一种是history模式，主要使用history.pushState方法来进行静态跳转</p>
+</li>
 </ol>
 
             </div>
@@ -647,7 +670,7 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lycra-98.github.io/2020/03/19/vue-chun-zhao-mian-jing/">https://lycra-98.github.io/2020/03/19/vue-chun-zhao-mian-jing/</a>
+                    <a href="https://lycra-98.github.io/2020/03/22/vue-chun-zhao-mian-jing/">https://lycra-98.github.io/2020/03/22/vue-chun-zhao-mian-jing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -732,7 +755,7 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
         repo: 'Lycra-98.github.io',
         owner: 'Lycra-98',
         admin: "Lycra-98",
-        id: '2020-03-19T17-00-00',
+        id: '2020-03-22T09-30-37',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -758,36 +781,32 @@ http状态码由3位十进制数字组成，第一个数字表示状态码的分
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/03/19/vue-chun-zhao-mian-jing/">
+                <a href="/2020/03/22/vue-chun-zhao-mian-jing/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="vue常见面经">
+                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="vue春招面经">
                         
-                        <span class="card-title">vue常见面经</span>
+                        <span class="card-title">vue春招面经</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            http常见状态码1.http常见状态码的含义
+                            http与浏览器1.http常见状态码的含义
 http状态码由3位十进制数字组成，第一个数字表示状态码的分类,后面的两位表示该分类下的不同状态
 1**    信息。服务器收到请求，请继续执行请求
-2**      成功。请求被成功接收并处
+2**      成功。请求被成功接收并处理
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-22
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%9D%A2%E7%BB%8F/" class="post-category">
-                                    面经
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            渣渣强
                             
                         </span>
                     </div>
