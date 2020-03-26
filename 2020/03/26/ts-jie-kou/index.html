@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="typescript类型, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
-    <meta name="description" content="TypeScript是什么TypeScript是javascript的超集，用来约束javascript语言，像里面添加了可选的静态类型和基于类的面向对象编程
-但是我们需要注意的是TypeScript不能直接的运行在浏览器中，需要进行编译成">
+    <meta name="keywords" content="typescript接口, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
+    <meta name="description" content="接口接口的初始用接口的使用就相当于自定义类型名,可以用来定义对象类型，描述对象的形状,即定义对象中有哪些属性,属性值是什么类型,那么在使用对象接口类型的时候,属性要与形状相符
+接口是对行为的抽象,就是将类中共有的属性和方法抽离为一个接口再去">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>typescript类型 | 前端小站</title>
+    <title>typescript接口 | 前端小站</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">typescript类型</h1>
+                    <h1 class="description center-align post-title">typescript接口</h1>
                 </div>
             </div>
         </div>
@@ -451,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-25
+                    2020-03-26
                 </div>
                 
 
@@ -468,174 +468,211 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="TypeScript是什么"><a href="#TypeScript是什么" class="headerlink" title="TypeScript是什么"></a>TypeScript是什么</h3><p>TypeScript是javascript的超集，用来约束javascript语言，像里面添加了可选的静态类型和基于类的面向对象编程</p>
-<p>但是我们需要注意的是TypeScript不能直接的运行在浏览器中，需要进行编译成javascript语言，所以我们可以理解为TypeScript只存在开发阶段，在真正项目上线的时候，TypeScript还是要编译成javascript语言才能正常运行的</p>
-<h3 id="ts开发环境"><a href="#ts开发环境" class="headerlink" title="ts开发环境"></a>ts开发环境</h3><ol>
-<li><p>我们直接生成ts文件并且引入html页面中，是无法执行的，浏览器并不识别ts语法，需要使用npm i typescript -g进行ts全局安装，然后在使用tsc命令运行ts文件，会讲ts编译成js文件</p>
-</li>
-<li><p>在文件夹中编译ts文件,直接生成一个ts的配置文件tsconfig.json，在里面写如下配置项,target表示将ts最终编译成什么语法,module表示使用什么模块化，outDir表示编译输出目录，rootDir表示存放ts的根目录，noEmitOnError表示ts语法错误不会进行编译，在编写ts代码的时候可以实时监控ts代码的修改进行编译，并输出到js文件夹中</p>
-<pre><code>// 将tsconfig的配置文件修改为这个样子
-{
-  &quot;compilerOptions&quot;: {
-    &quot;target&quot;: &quot;es5&quot;,
-    &quot;module&quot;: &quot;commonjs&quot;,
-    &quot;outDir&quot;: &quot;./js&quot;,
-    &quot;rootDir&quot;: &quot;./ts&quot;,
-    &quot;noEmitOnError&quot;: true
-  }
-}</code></pre><p>3.项目开发</p>
-<p>正常的一般项目开发，我们可以使用三大框架的脚手架来创建，那么这些配置会在webpack中自动生成，就不需要我们手动的在进行配置了，只是需要手动的去加一些团队的代码风格的约束</p>
-<p>eslint用来检测代码的风格和格式化，比如说函数名后小括号前要加空格，定义的变量如果不用改变需要使用const定义，回调函数使用箭头函数等等</p>
-<p>prettier用来配合eslint格式化代码，规定代码的样式，例如只使用单引号，行尾需要加分号，一行只允许多少个代码等等</p>
-<p>配合vscode使用团队项目开发</p>
-</li>
-</ol>
-<h3 id="TS数据类型"><a href="#TS数据类型" class="headerlink" title="TS数据类型"></a>TS数据类型</h3><p>ts中在定义变量时不再是直接定义，而需要在定义变量后面加上静态类型来约束</p>
-<ol>
-<li><p>数据类型</p>
-<pre class=" language-tsx"><code class="language-tsx">// 数字类型Number 双精度64位浮点数 支持二进制，八进制，十进制，十六进制
-let binary: number = 0b011
-let octdec: number = 0o744
-let decmial: number = 100
-let hex: number = 0x8BF
-console.log(binary, octdec, decmial, hex);</code></pre>
-</li>
-<li><p>字符串类型string</p>
-<pre class=" language-tsx"><code class="language-tsx">// 字符串型 支持单引号 双引号 模板字符串
-let str1: string = "aaa"
-let str2 = 'bbb'
-let str3 = `我是${str1}----${str2}`
-console.log(str1, str2, str3);</code></pre>
-</li>
-<li><p>布尔型boolean</p>
-<pre><code>// 布尔型 boolean 只有true和false
-let isDone: boolean = true
-// new Boolean是对象因此不能赋值给boolean类型，只能赋值给Boolean类型基本包装类型
-let bool1: Boolean = new Boolean(1)
-console.log(isDone, bool1)
-</code></pre></li>
-<li><p>void 表示没有任何类型 一般用于没有返回值的函数</p>
-<pre class=" language-tsx"><code class="language-tsx">// void类型 表示没有任何类型,适用于没有返回值的函数
-function tishi(): void {
- console.log('我是没有返回值的函数')
+                <h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><h4 id="接口的初始用"><a href="#接口的初始用" class="headerlink" title="接口的初始用"></a>接口的初始用</h4><p>接口的使用就相当于自定义类型名,可以用来定义对象类型，描述对象的形状,即定义对象中有哪些属性,属性值是什么类型,那么在使用对象接口类型的时候,属性要与形状相符</p>
+<p>接口是对行为的抽象,就是将类中共有的属性和方法抽离为一个接口再去实现</p>
+<pre class=" language-tsx"><code class="language-tsx">interface Sports {
+    color: string;
+    name: string;
 }
-tishi()</code></pre>
-</li>
-<li><p>enum 表示枚举类型 为一组数值赋予友好的名字,使用enum 关键字自定义一组数值</p>
-<pre class=" language-tsx"><code class="language-tsx">// enum枚举类型 一般用于为一组数值赋予友好的名字，比如可以把0-6自定义为周一到周日
-// 默认从0开始 可以手动赋值 使用enum关键字自定义类型 后面跟大括号来装数值对应的名字
-enum Week {
-  Sunday,
-  Monday,
-  Tuesday
+let run: Sports = {
+    color: 'blue',
+    name: 'caoqiang'
+}</code></pre>
+<h4 id="可选属性和只读属性"><a href="#可选属性和只读属性" class="headerlink" title="可选属性和只读属性"></a>可选属性和只读属性</h4><pre class=" language-tsx"><code class="language-tsx">// 可选属性和只读属性
+// 如果不需要完全匹配一个对象形状,可以使用?操作符可选属性
+// 只读属性使用readonly关键字表示该属性在使用过后就不能进行修改
+interface Sports {
+    name: string;
+    readonly cate: string;
+    // evn是可选属性
+    env?: string;
 }
-let s1: Week = Week.Monday
-let s2: Week = Week.Tuesday
-console.log(s1, s2);// 输出的是1 2,给1和2用来表示周一和周二</code></pre>
-</li>
-<li><p>数组和元组，数组表示一组同类型的集合(使用any可以存取任何类型)，元组表示不同类型集合</p>
-<pre class=" language-tsx"><code class="language-tsx">// 数组和元组
-// 数组表示一组相同数据类型的集合(使用any可以存任何数据类型) 元组表示不同类型的集合
-// 数组定义方式1.类型+[]
-let list1: number[] = [1, 2, 3] // 表示这一组数组中只能存放number类型
-// 数组泛型 Array<数据类型>
-let list2: Array<string> = ['a', 'b', 'c'] // 表示这一组数组中只能存放字符串类型
-// 利用接口表示数组,索引签名,只能index是什么类型
-interface SelfArray {
-    // 指定一个自定义数组类型SelfArray,用来存放数字
-    [index: number]: number
+
+let ball: Sports = {
+    name: 'basketball',
+    cate: 'balls',
 }
-let list3: SelfArray = [4, 5, 6]
-// 元组 [指定需要用到的数据类型]，赋值时按照类型顺序赋值
-let list4: [number, string] = [1, 'a']
-console.log(list1,list2,list3,list4);</code></pre>
-</li>
-<li><p>any和Object类型，都是用来移除类型检查，可以赋值任何类型，区别就是any类型的可以使用自身的方法也可以使用原型链上的方法，Object类型只能使用本身的方法</p>
-<pre class=" language-tsx"><code class="language-tsx">// any类型和Object类型
-// any类型允许在编译时移除类型检查,赋值任何类型
-// Object也是移除类型检查，但是两者调用方法不同,any可以调用任何方法,Object只能调用构造函数本身的方法
-let notSure: any
-notSure = 1
-notSure = 'a'
-notSure = 6.666
-// 保留一位小数
-notSure.toFixed(1)
-let notSure1: Object
-notSure1 = 6.66
-// notSure1.toFixed(1) 报错Object上没有该方法
-notSure1.toString()</code></pre>
-</li>
-<li><p>null和undefined</p>
-<pre class=" language-tsx"><code class="language-tsx">// null 和 undefined 两个都代表空置，但是类型不同,undefind表示未定义,null表示空对象
-// null 和 undefined是所有类型的子类型可以直接赋值给其他类型
-console.log(undefined == null);
-console.log(undefined === null);
-let a1: number = null
-console.log(a1);</code></pre>
-</li>
-</ol>
-<p>综上所述ts在声明变量的时候，都是先指定变量的数据类型，然后再进行赋值操作</p>
-<p>数字型 字符串型 布尔型 null undefined void enum 数组和元组 类型[] Array&lt;类型&gt; 接口形式interface 自定义类型名 { [index: number]: 类型 } 元组不同类型,赋值时按照顺序与指定的类型对应 any Object</p>
-<h3 id="TS变量声明"><a href="#TS变量声明" class="headerlink" title="TS变量声明"></a>TS变量声明</h3><p>在ts中推荐使用let和const进行声明变量，不推荐使用var，因为var声明的变量只有函数作用域和全局作用域，还存在变量提示，const和let声明的变量不存在变量提升，存在块级作用域，变量只在定义的块级作用域中生效</p>
-<h3 id="高级类型"><a href="#高级类型" class="headerlink" title="高级类型"></a>高级类型</h3><h4 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h4><p>表示一个变量的取值可以是多种类型中其中的一种，类型之间用|隔开，但是联合类型只能使用所有类型中共有的属性和方法，不能使用类型特有的属性和方法</p>
-<pre class=" language-tsx"><code class="language-tsx">// 联合类型就是指一个变量可以时多个类型中的一种,类型之间用|分隔
-// 联合类型的属性或方法，只能访问他的所有类型共有的属性和方法
-function getParams(params: number | string): number | string {
-    // console.log(params.toFixed(1)) 该方法只有number特有的，string类型中并没有该方法
-    console.log(params.toString()); // toString()是两者共有的方法
-    return params
+// ball.cate = 'run' 报错
+let ball1: Sports = {
+    name: 'football',
+    cate: 'balls',
+} </code></pre>
+<h4 id="任意属性"><a href="#任意属性" class="headerlink" title="任意属性"></a>任意属性</h4><p>任意属性就是一个接口除了包含我们需要的属性之外,还可以拥有其他属性(一些不确定的属性),就可以使用任意属性</p>
+<pre class=" language-tsx"><code class="language-tsx">
+// 任意属性就是一个接口除了我们需要的属性之外还可以包含其他属性,这时就要用到任意属性
+// 格式就是索引签名[index: string]: 所有属性类型的父类
+// 任意属性的类型必须包含所有其他属性的类型
+interface Sports {
+    name: string;
+    sum: number;
+    env?: boolean;
+    // 任意属性,any包含了所有必需属性和可选属性的类型
+    [propName: string]: any
 }
-console.log(getParams(6.66));</code></pre>
-<h4 id="类型判断"><a href="#类型判断" class="headerlink" title="类型判断"></a>类型判断</h4><ul>
-<li><p>在进行变量初始化时，如果没有选择类型，类型判断会自动帮我们提供会赋值的那个类型</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> v1 <span class="token operator">=</span> <span class="token number">3</span>
-<span class="token comment" spellcheck="true">// v1 = 'a' 会报错,在初始化赋值的时候类型推断已经帮我将该变量设置后赋值的类型number了</span></code></pre>
-</li>
-<li><p>在定义函数的时候,形参没有只有声明而没有赋值,就是any类型，函数的返回值会根据return的值来进行类型判断</p>
-<pre class=" language-tsx"><code class="language-tsx">// 该函数形参没有赋值就是any类型,返回值根据return后的值类型来决定是number类型
-function getSum(sum) {
-    return 1
+
+let ss2: Sports = {
+    name: 'basketball',
+    sum: 1,
+    env: true,
+    price: 123,
+    hobbies: '篮球'
 }
-console.log(getSum(1));</code></pre>
-</li>
-</ul>
-<h4 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h4><p>类型断言就是我们可以手动指定一个值的类型跳过ts编译</p>
-<pre class=" language-tsx"><code class="language-tsx">// 类型断言,手动指定一个值的类型跳过ts编译
-// 第一种方法<类型>值   第二种方法 值 as 类型   建议采取第二种方法
-function getParams1(params: number | string): number {
-    if (typeof params === 'string') {
-        // 需要返回params的长度,该属性只有string类型才有,需要将params手动指定为string类型
-        return (<string>params).length
-    } else {
-        return (<string>params.toString()).length
+console.log(ss2);</code></pre>
+<h4 id="函数类型接口"><a href="#函数类型接口" class="headerlink" title="函数类型接口"></a>函数类型接口</h4><pre class=" language-tsx"><code class="language-tsx">// 函数类型接口,接口除了能定义有基本属性的对象类型之外,还可以定义函数类型
+// 在接口定义的函数类型,在使用时对应位置参数类型必须是一致的
+// 就是说你定义的参数类型第一个参数是number,那么使用时,第一个参数就要是number
+// 函数表达式
+let pin = function(x: number, y: string): string{
+    return x.toString() + y;
+}
+// 函数定义
+let pin1: (x: number, y: string) => string
+pin1 = function(x: number, y: string): string{
+    return x.toString() + y;
+}
+console.log(pin(1, 'aa'), pin1(2, '---'));
+// 函数类型接口
+interface MyFn {
+    // 右边为输入类型 : 左边为输出类型
+    (x: number, y: string): string
+}
+let pin2: MyFn;
+pin2 = function(a: number, b: string): string{
+    return a.toString() + b;
+}
+console.log(pin2(1, 'y'));</code></pre>
+<h4 id="可索引属性"><a href="#可索引属性" class="headerlink" title="可索引属性"></a>可索引属性</h4><p>可索引属性就是指可以使用索引来获取的类型,比如arr[1],obj[‘name’],数组和对象</p>
+<p>可索引属性具有一个索引签名，索引签名就是指定索引的类型只有数字和字符串类型,然后指定索引返回值的类型</p>
+<p>在接口中的表达形式就是[索引名: number/string] ：索引对应的返回值类型</p>
+<p>同时使用时如果使用数字类型的索引，返回值必须是字符串索引返回值类型的子类型或者相同，因为如果使用obj[100],就相当于要转化为obj[‘100’]</p>
+<p>单独使用数字类型索引,数组和对象都可以</p>
+<pre class=" language-tsx"><code class="language-tsx"> interface Myindex {
+     [index: number] : number 
+ }
+ let arr1: Myindex = [1, 2, 3]
+ let obj1: Myindex = {
+     1: 3,
+    2: 2,
+     3: 1
+ }</code></pre>
+<p>单独使用字符串索引,只能是对象</p>
+<pre class=" language-tsx"><code class="language-tsx">interface Myindex {
+     [index: string] : number 
+ }
+ // let arr1: Myindex = [1, 2, 3] 数组索引只能是数字类型
+ let obj1: Myindex = {
+     '1': 3,
+     '2': 2,
+     '3': 1
+ }</code></pre>
+<p>同时使用</p>
+<pre class=" language-tsx"><code class="language-tsx">class Sports {
+    name: string;
+}
+class Ball extends Sports {
+    env: boolean;
+}
+let n1: Ball = new Ball()
+let n2: Sports = new Sports()
+interface Myindex {
+    // 同时使用时,数字类型索引的返回值必须是字符串的子类型或者相同
+    [index: number] : Ball // 如果这里写Sports,而下面写Ball是会报错,这里只能和下面同为sports或者这里写ball
+    [index: string] :  Sports
+}
+
+let obj2 = {
+    // 数字类型返回值是Ball类型,即Ball构造函数实例
+    1: n1,
+    '2': n2
+}
+</code></pre>
+<h4 id="继承接口"><a href="#继承接口" class="headerlink" title="继承接口"></a>继承接口</h4><p>继承一个接口</p>
+<pre class=" language-tsx"><code class="language-tsx">// 接口继承
+// 接口继承也是使用extends关键字,可以将一个接口的成员复制到另一个接口,可以更灵活地将接口分隔到可复用的模块中
+// 可以继承一个接口也可以继承多个接口
+interface Mom {
+    name: string;
+}
+interface Son1 extends Mom {
+    color: string;
+}
+// 需要满足字接口形状还要满足父接口形状
+let i1: Son1 = {
+    color: 'red',
+    name: 'basketball'
+}</code></pre>
+<pre class=" language-tsx"><code class="language-tsx">// 继承多个接口
+interface Mom {
+    name: string;
+}
+interface Father1 {
+    only: boolean
+}
+interface Son1 extends Mom, Father1 {
+    color: string;
+}
+// 需要满足字接口形状还要满足父接口形状
+let i1: Son1 = {
+    color: 'red',
+    name: 'basketball',
+    only: true
+}</code></pre>
+<h4 id="接口继承类"><a href="#接口继承类" class="headerlink" title="接口继承类"></a>接口继承类</h4><pre class=" language-tsx"><code class="language-tsx">
+// 接口继承类
+// 接口可以继承类里面的成员,但是不包括成员的实现,就是不会继承属性值和具体方法的实现,只会在接口声明类里成员
+// 可以使用接口的地方都可以使用类
+class Mom {
+    name: string = 'BigMom'
+    hun() {
+        console.log('我是类里面定义的方法');
     }
 }
-console.log(getParams1(123));</code></pre>
-<pre class=" language-tsx"><code class="language-tsx">// 双重断言
-let a: number | string
-a = '123'
-// 将y指定为a断言类型的子类型,先对a进行指定指定类型,然后在对指定类型之后a继续断言指定其子类型
-let y = (a as any) as string </code></pre>
-<p>一般类型断言与联合类型结合使用，可以跳过联合类型的判断，直接指定一个类型</p>
-<h4 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h4><p>相当于给一个类型起了一个新名字来进行使用</p>
-<pre class=" language-tsx"><code class="language-tsx">// 类型别名,就是给一个类型起了一个姓名字,用别名来代替该类型,实际开发使用接口来代替类型别名,type关键字
-let b1: number = 1
-type Name = number
-let b2: Name = 2
-type Nmame1 = number | string
-let b3: Nmame1 = 'hello'</code></pre>
-<h4 id="字符串字面量类型"><a href="#字符串字面量类型" class="headerlink" title="字符串字面量类型"></a>字符串字面量类型</h4><p>用来约束string类型取值只能是几个字符串中的一种,使用type定义,boolean和number字面量类型也同样支持</p>
-<pre class=" language-tsx"><code class="language-tsx">// 字符串字面量类型,用来约束类型为string的取值是某几个字符串中的一个
-// 使用type来定义,在typescript中也同样支持boolean和number字面量类型
-type MoveDirection = 'top' | 'bottom' | 'left' | 'right'
-function move(params: MoveDirection): void {
-    console.log(params);
-}
-// params取值只能是四种中的一中
-move('top')
 
-type num = 1 | 2 | 3
-let c1: num = 2</code></pre>
+interface Kaer extends Mom {
+    nuo: string
+}
+
+let nuo1: Kaer = {
+    nuo: '糯糯果实',
+    name: '卡二',
+    hun() {
+        console.log('我是接口中hun方法具体实现');
+    }
+}
+// 使用接口来定义,打印的是具体实现,因此说明接口继承类是会继承类里的属性名和方法名
+console.log(nuo1.name);
+nuo1.hun()</code></pre>
+<h4 id="类实现接口"><a href="#类实现接口" class="headerlink" title="类实现接口"></a>类实现接口</h4><p>让一个类去符合一个接口的定义,就是类使用implements关键字去实现了接口,就要实现接口中具体的属性和方法，一般一个类只能继承一个类,但是如果多个类有共有的属性和方法可以抽取出来封装成一个接口,然后再让类具体的去实现该接口</p>
+<pre class=" language-tsx"><code class="language-tsx">// 类实现接口
+// implements关键字实现对应的接口,将多个类共有的属性和方法抽离成一个接口,再由类去具体实现接口
+// 接口将类中共有的属性和方法进行声明,不予以具体实现
+interface Sweet {
+    // 声明一个函数签名
+    taste(): void;
+}
+class Dangao implements Sweet {
+    name: string = '蛋糕'
+    taste() {
+        console.log('我是蛋糕类里的方法实现');
+    }
+}
+class Binggan implements Sweet {
+    name: string = '饼干'
+    taste() {
+        console.log('我是饼干类里的方法实现');
+    }
+}
+// 类可以当接口使用
+let D1: Dangao = new Dangao()
+let B1: Binggan = new Binggan()
+D1.taste()
+B1.taste()</code></pre>
+<h3 id="接口总结"><a href="#接口总结" class="headerlink" title="接口总结"></a>接口总结</h3><p>接口就是用来描述形状的,大概这个类型是什么样子,具体的实现都是由使用接口类型时来进行的,具体实现的时候既要满足形状一致(就是匹配规则要与接口一致),还需要给形状画上颜色填充内容</p>
+<p>接口就相当于自定义的类型,用来约束变量来符合接口里定义的属性</p>
+<p>接口里面只能进行属性的声明不能赋初始值,比如说只能定义属性名这个属性名对应的属性值是什么类型</p>
+<p>只能进行函数的定义不能给予具体的函数体的实现比如函数签名,或者函数类型接口(输入的类型) : 输出的类型</p>
+<p>索引签名[index: number/string] : 索引对应的返回值类型</p>
+<p>可以当作类型去使用,使用接口类型的值就需要满足接口里定义的属性和方法并且赋予值,给予方法的具体实现</p>
 
             </div>
             <hr/>
@@ -661,7 +698,7 @@ let c1: num = 2</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lycra-98.github.io/2020/03/25/ts-lei-xing-bi-ji/">https://lycra-98.github.io/2020/03/25/ts-lei-xing-bi-ji/</a>
+                    <a href="https://lycra-98.github.io/2020/03/26/ts-jie-kou/">https://lycra-98.github.io/2020/03/26/ts-jie-kou/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -746,7 +783,7 @@ let c1: num = 2</code></pre>
         repo: 'Lycra-98.github.io',
         owner: 'Lycra-98',
         admin: "Lycra-98",
-        id: '2020-03-25T09-57-33',
+        id: '2020-03-26T12-50-55',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -767,9 +804,61 @@ let c1: num = 2</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/03/26/ts-jie-kou/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="typescript接口">
+                        
+                        <span class="card-title">typescript接口</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            接口接口的初始用接口的使用就相当于自定义类型名,可以用来定义对象类型，描述对象的形状,即定义对象中有哪些属性,属性值是什么类型,那么在使用对象接口类型的时候,属性要与形状相符
+接口是对行为的抽象,就是将类中共有的属性和方法抽离为一个接口再去
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/typescript/" class="post-category">
+                                    typescript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/typescript/">
+                        <span class="chip bg-color">typescript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/03/26/ts-han-shu-he-lei/">
                     <div class="card-image">
@@ -789,9 +878,9 @@ let c1: num = 2</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -809,54 +898,6 @@ let c1: num = 2</code></pre>
                     
                     <a href="/tags/typescript/">
                         <span class="chip bg-color">typescript</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/03/22/vue-chun-zhao-mian-jing/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="vue春招面经">
-                        
-                        <span class="card-title">vue春招面经</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            http与浏览器1.http常见状态码的含义
-http状态码由3位十进制数字组成，第一个数字表示状态码的分类,后面的两位表示该分类下的不同状态
-1**    信息。服务器收到请求，请继续执行请求
-2**      成功。请求被成功接收并处理
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            渣渣强
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/vue-js/">
-                        <span class="chip bg-color">vue.js</span>
                     </a>
                     
                 </div>
