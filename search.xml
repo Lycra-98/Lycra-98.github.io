@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>typescript函数和类</title>
+      <link href="/2020/03/27/ts-fan-xing/"/>
+      <url>/2020/03/27/ts-fan-xing/</url>
+      
+        <content type="html"><![CDATA[<h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><h4 id="泛型的定义和使用"><a href="#泛型的定义和使用" class="headerlink" title="泛型的定义和使用"></a>泛型的定义和使用</h4><p>在定义函数、接口或者类的时候,不预先指定具体的类型(使用泛型来代替),而是在使用的时候在指定具体类型</p><p>提高组件的可复用性，一个组件可以是支持多个数据类型的数据</p><pre class=" language-tsx"><code class="language-tsx">// 泛型的定义// 在定义函数、接口或者类的时候,不预先指定具体的类型(使用泛型来代替),而是在使用的时候在指定具体类型// 提高组件的可复用性，一个组件可以是支持多个数据类型的数据// 我们定义一个函数 有一个要求需要输入一个值并返回该值,这个值什么类型就要返回什么类型// 这样写就只能使用number和返回number,如果我们想要string就需要重新定义一个参数和返回值都是string类型的函数function getValue(value: number): number {    return value}</code></pre><pre class=" language-tsx"><code class="language-tsx">// 泛型的使用// <T>代表泛型,再调用该函数时由传入<>中的类型决定该传入什么类型返回什么类型,传入和返回的类型一致// <T>可以使用任意大写字母,一般使用大写Tfunction getValue<T>(value: T): T {    return value}// 这样即实现了类型检查,又提高了可复用性console.log(getValue<number>(1));console.log(getValue<string>('我是字符串'));// 再使用泛型函数时,有两种方式,第一种不写<>的类型,通过参数的类型,做类型推断返回值类型let g1 = getValue(2)let g2 = getValue('aaa')// 第二种就是在<>中指定类型</code></pre><h4 id="泛型变量"><a href="#泛型变量" class="headerlink" title="泛型变量"></a>泛型变量</h4><pre class=" language-tsx"><code class="language-tsx">// 泛型变量// <T>表示泛型变量也是用来表示当成一个类型去使用,这里当成数组去使用function getArr<T>(arr: T[]): T[] {  console.log(arr.length)  return arr}console.log(getArr([1, 2]))// 泛型变量可以是任意字符,可以是多个字符,交换两个类型组成的元组function swap<T, U>(arr: [T, U]): [T, U] {    return [arr[0], arr[1]]}swap([0, 'a'])// 该元组第一个参数是数组类型,第二个参数是对象类型swap([[0, 1, 2], { name: 'caoqing' }])</code></pre><h4 id="类的泛型"><a href="#类的泛型" class="headerlink" title="类的泛型"></a>类的泛型</h4><p>在定义类的时候,可以使用泛型来规定属性的类型和方法的返回值和参数的类型,只支持实例成员使用泛型</p><pre class=" language-tsx"><code class="language-tsx">// 类的泛型// 定义一个求数组最小值的类,要求输入什么类型就返回什么类型的最小值class MinClass<T> {    list: T[] = [];    add(value: T): void{        this.list.push(value);    }    min(): T{        let minNum = this.list[0]        for (let i = 0; i < this.list.length; i++) {            if (minNum > this.list[i]) {                minNum = this.list[i]            }        }        return minNum    }}let m = new MinClass<number>() // 实例化类,并制定了T的类型为numberm.add(1);m.add(2);m.add(6);m.add(10);console.log(m.min());let m1 = new MinClass<string>() // 实例化类,并制定了T的类型stringm1.add('a');m1.add('b');m1.add('c');m1.add('d');console.log(m1.min());</code></pre><p>泛型接口</p><pre class=" language-tsx"><code class="language-tsx">// 泛型接口// 两种方式,第一种使用函数类型接口,将泛型变量加在函数定义之前// 第二种使用函数类型接口,将泛型变量加在接口之后第一种interface ConfigFn {  <T>(value: T): T}let getData: ConfigFn = function<T>(value: T): T {  return value}console.log(getData(1));</code></pre><pre class=" language-tsx"><code class="language-tsx">// 第二种interface ConfigFn<T> {    (value: T): T}function getData<T>(value: T): T{    return value}let myData: ConfigFn<string> = getDataconsole.log(myData('aaaa'));</code></pre><h4 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a>泛型约束</h4><ol><li><p>在函数内部使用泛型变量的时候，由于事先不知道它是哪种类型，所以不能随意的操作它的属性或方法</p></li><li><p>语法： 使用 泛型 变量T   extends 继承 我们定义的接口； 约束了必须符合的形状</p></li></ol><pre class=" language-tsx"><code class="language-tsx">// 我要们需要定义一个泛型函数,打印出参数的length属性function getLength<T>(arr: T): T {    // 不知道T是什么类型,不能使用该类型的length属性,或报错    // console.log(arr.length);    return arr}// 顶一个length属性的接口interface Length {    length: number}// 约束泛型变量必须满足这个接口,有length属性并且是数字型function getLength1<T extends Length>(arr: T): T {    console.log(arr.length);    return arr}// console.log(getLength1(1)) 数字型没有length属性会报错console.log(getLength1('aaa'));console.log(getLength1([1, 2, 3]));</code></pre><p>使用接口来对不确定的泛型类型进行约束，表示在调用函数的时候指定具体的类型的时候,该类型必须满足该接口的形状,就是如果在定义函数时使用了类型的属性和方法,就需要创建一个接口来满足该属性和方法,然后使用泛型变量 extends 定义的接口来进行约束</p><p>如果你在调用函数时指定的类型跟接口形状不符合就会报错</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>泛型主要用于定义函数、类、接口时，如果对参数的类型不确定，可以使用泛型来代替，然后在使用的时候在具体指定类型</p><p>类似于any可以让使用任何类型，但是会进行类型检查,如果在使用的时候，制定了类型就必须是该类型</p><p>可以进行函数、类、接口的复用，支持所有可能的数据类型</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> typescript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> typescript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>typescript接口</title>
       <link href="/2020/03/26/ts-jie-kou/"/>
       <url>/2020/03/26/ts-jie-kou/</url>
@@ -164,9 +189,9 @@
       
         <tags>
             
-            <tag> node.js </tag>
-            
             <tag> ajax </tag>
+            
+            <tag> node.js </tag>
             
         </tags>
       

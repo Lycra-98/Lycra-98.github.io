@@ -356,7 +356,7 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">22</a></span>
+    <span class="count"><a href="/">23</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -386,7 +386,7 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">22</a></span>
+    <span class="count"><a href="/">23</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -536,7 +536,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,16,6],
+                data: [0,0,0,0,0,0,0,0,0,0,0,16,7],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -578,7 +578,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Ajax","value":1},{"name":"cookie和session","value":1},{"name":"git项目工具","value":1},{"name":"ajax","value":1},{"name":"mongoDB","value":1},{"name":"node.js","value":2},{"name":"Express框架","value":1},{"name":"vue.js","value":1},{"name":"javascript","value":1},{"name":"node.js网站开发项目","value":5},{"name":"webpack","value":1},{"name":"hexo博客","value":1},{"name":"typescript","value":3}],
+                data: [{"name":"ajax","value":1},{"name":"cookie和session","value":1},{"name":"git项目工具","value":1},{"name":"mongoDB","value":1},{"name":"Express框架","value":1},{"name":"Ajax","value":1},{"name":"typescript","value":4},{"name":"node.js","value":2},{"name":"vue.js","value":1},{"name":"webpack","value":1},{"name":"node.js网站开发项目","value":5},{"name":"javascript","value":1},{"name":"hexo博客","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -602,7 +602,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["node.js","node.js项目","typescript","javascript","vue.js","Ajax","cookie","git","ajax","mongoDB"]
+                data: ["node.js","node.js项目","typescript","javascript","vue.js","ajax","cookie","git","mongoDB","NoSql"]
             }
         ],
         yAxis: [
@@ -615,7 +615,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [6,5,3,2,2,1,1,1,1,1],
+                data: [6,5,4,2,2,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -732,20 +732,14 @@
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/ajax/">
+                <span class="chip center-align waves-effect waves-light chip-default">ajax</span>
+            </a>
+            
+            
+            
             <a href="/tags/node-js/">
                 <span class="chip center-align waves-effect waves-light chip-default">node.js</span>
-            </a>
-            
-            
-            
-            <a href="/tags/javascript/">
-                <span class="chip center-align waves-effect waves-light chip-default">javascript</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Ajax/">
-                <span class="chip center-align waves-effect waves-light chip-default">Ajax</span>
             </a>
             
             
@@ -762,12 +756,6 @@
             
             
             
-            <a href="/tags/ajax/">
-                <span class="chip center-align waves-effect waves-light chip-default">ajax</span>
-            </a>
-            
-            
-            
             <a href="/tags/mongoDB/">
                 <span class="chip center-align waves-effect waves-light chip-default">mongoDB</span>
             </a>
@@ -780,20 +768,32 @@
             
             
             
-            <a href="/tags/http%E5%8D%8F%E8%AE%AE/">
-                <span class="chip center-align waves-effect waves-light chip-default">http协议</span>
-            </a>
-            
-            
-            
-            <a href="/tags/npm/">
-                <span class="chip center-align waves-effect waves-light chip-default">npm</span>
-            </a>
-            
-            
-            
             <a href="/tags/Express/">
                 <span class="chip center-align waves-effect waves-light chip-default">Express</span>
+            </a>
+            
+            
+            
+            <a href="/tags/javascript/">
+                <span class="chip center-align waves-effect waves-light chip-default">javascript</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Ajax/">
+                <span class="chip center-align waves-effect waves-light chip-default">Ajax</span>
+            </a>
+            
+            
+            
+            <a href="/tags/typescript/">
+                <span class="chip center-align waves-effect waves-light chip-default">typescript</span>
+            </a>
+            
+            
+            
+            <a href="/tags/http%E5%8D%8F%E8%AE%AE/">
+                <span class="chip center-align waves-effect waves-light chip-default">http协议</span>
             </a>
             
             
@@ -804,10 +804,8 @@
             
             
             
-            
-            
-            <a href="/tags/node-js%E9%A1%B9%E7%9B%AE/">
-                <span class="chip center-align waves-effect waves-light chip-default">node.js项目</span>
+            <a href="/tags/npm/">
+                <span class="chip center-align waves-effect waves-light chip-default">npm</span>
             </a>
             
             
@@ -818,14 +816,16 @@
             
             
             
-            <a href="/tags/hexo/">
-                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
+            <a href="/tags/node-js%E9%A1%B9%E7%9B%AE/">
+                <span class="chip center-align waves-effect waves-light chip-default">node.js项目</span>
             </a>
             
             
             
-            <a href="/tags/typescript/">
-                <span class="chip center-align waves-effect waves-light chip-default">typescript</span>
+            
+            
+            <a href="/tags/hexo/">
+                <span class="chip center-align waves-effect waves-light chip-default">hexo</span>
             </a>
             
             
