@@ -480,9 +480,10 @@ git i">
 <p>检查暂存区所有文件都都没有问题后，就可以将暂存区文件上传到github上，但是要先生成ssh密匙授权本电脑   ssh-keygen -t rsa -C “你github邮箱” 就可以生成本机的ssh密匙然后填写到github的ssh选项中  添加成功后就可以从本机将暂存区的文件传到github远程仓库中</p>
 <h3 id="暂存区-gt-远程仓库"><a href="#暂存区-gt-远程仓库" class="headerlink" title="暂存区 =&gt; 远程仓库"></a>暂存区 =&gt; 远程仓库</h3><p>git remote add origin 远程仓库地址<br>git push -u origin master<br>第一次提交会要求输入github用户和密码  </p>
 <p>第二次提交直接git push即可</p>
-<h3 id="创建分支-并将分支推送到远程仓库"><a href="#创建分支-并将分支推送到远程仓库" class="headerlink" title="创建分支 并将分支推送到远程仓库"></a>创建分支 并将分支推送到远程仓库</h3><p>每次项目新完成一个功能需要在一个新分支里进行最后合并到主分支master<br>git checkout -b 新分支名    创建并切换到新分支<br>git branch 查看分支<br>git checkout 分支名 切换分支<br>每次完成一个新分支的功能之后切换到主分支 git checkout master<br>git merge 分支名  进行分支合并到主分支<br>进入到新创建的分支 将该分支推送到远程分支git push -u origin 远端分支名 第一次推送时 第二次如果修改了该分支直接git push即可</p>
+<h3 id="创建分支-并将分支推送到远程仓库"><a href="#创建分支-并将分支推送到远程仓库" class="headerlink" title="创建分支 并将分支推送到远程仓库"></a>创建分支 并将分支推送到远程仓库</h3><p>每次项目新完成一个功能需要在一个新分支里进行最后合并到主分支master<br>git checkout -b 新分支名    创建并切换到新分支<br>git branch 查看分支<br>git branch 分支名 创建分支<br>git checkout 分支名 切换分支<br>每次完成一个新分支的功能之后切换到主分支 git checkout master<br>git merge 分支名  进行分支合并到主分支<br>进入到新创建的分支 将该分支推送到远程分支git push -u origin 远端分支名 第一次推送时 第二次如果修改了该分支直接git push即可</p>
 <h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>从远程仓库克隆项目到本地</p>
-<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><p>从远程仓库同步本地代码,即更新代码</p>
+<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><p>从远程仓库同步本地代码,即更新代码<br>拉取分支代码需要git pull 仓库名 分支名<br>或者git pull –set-upstream origin 分支名</p>
+<p>默认第二次之后提交到主分支 master都是可以省略的 如果需要将代码提交到分支<br>需要git push 仓库名 分支名或者git push –set-upstream origin 分支名</p>
 
             </div>
             <hr/>
