@@ -4,9 +4,16 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="初步使用git, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
-    <meta name="description" content="进入到需要上传到远端的文件,使用全局配置git config –global user.name “github名字”和git config –global user.email “github邮箱”在github上建立远程仓库
-git i">
+    <meta name="keywords" content="前端工程化问题, web前端,html,css,js,jQery,git,node.js,mongoDB,Ajax,vue.js,博客,hexo">
+    <meta name="description" content="工程化
+前端工程化目的：提升业务效率
+
+
+为什么前端要工程化？为了提高前端开发效率，提高前端应用的可扩展性、可维护性等性能。
+
+前端工程化的内容
+规范：代码规范、目录结构规范、前后端接口规范、文档规范、commit规范、流程规范等
+分支管理">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +21,7 @@ git i">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>初步使用git | 前端小站</title>
+    <title>前端工程化问题 | 前端小站</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/libs/awesome/css/all.css">
@@ -304,12 +311,12 @@ git i">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">初步使用git</h1>
+                    <h1 class="description center-align post-title">前端工程化问题</h1>
                 </div>
             </div>
         </div>
@@ -426,8 +433,8 @@ git i">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/webpack%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BD%BF%E7%94%A8/">
+                                <span class="chip bg-color">webpack原理及使用</span>
                             </a>
                         
                     </div>
@@ -438,8 +445,8 @@ git i">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/git%E9%A1%B9%E7%9B%AE%E5%B7%A5%E5%85%B7/" class="post-category">
-                                git项目工具
+                            <a href="/categories/webpack/" class="post-category">
+                                webpack
                             </a>
                         
                     </div>
@@ -451,7 +458,7 @@ git i">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-12
+                    2020-05-04
                 </div>
                 
 
@@ -468,24 +475,151 @@ git i">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="进入到需要上传到远端的文件-使用全局配置"><a href="#进入到需要上传到远端的文件-使用全局配置" class="headerlink" title="进入到需要上传到远端的文件,使用全局配置"></a>进入到需要上传到远端的文件,使用全局配置</h3><p>git config –global user.name “github名字”和git config –global user.email “github邮箱”<br>在github上建立远程仓库</p>
-<p>git init进行本地初始化  建立本地暂存区</p>
-<p>readme.md//这个markdown文件是进行说明的文档</p>
-<p>.git文件存储当前项目的所有版本信息</p>
-<p>本地文件夹叫工作区  git init后的是暂存区 github上创建的仓库是远程仓库</p>
-<p>将工作区的文件提交到暂存区<br>git add 文件名 或者 git add *   表示提交所有文件    git commit -m “提交的描述”</p>
-<h3 id="查看当前工作区的状态"><a href="#查看当前工作区的状态" class="headerlink" title="查看当前工作区的状态"></a>查看当前工作区的状态</h3><p>git status  用于查看当前工作区的文件是否被修改</p>
-<p>如果被修改了可以git add 文件名 重新提交修改过的文件    也可以用git checkout 文件名从暂存区恢复文件到工作区</p>
-<h3 id="git-diff-可以详细查看工作区和暂存区的版本区别-看看哪个文件被修改了-修改了什么内容"><a href="#git-diff-可以详细查看工作区和暂存区的版本区别-看看哪个文件被修改了-修改了什么内容" class="headerlink" title="git diff 可以详细查看工作区和暂存区的版本区别 看看哪个文件被修改了 修改了什么内容"></a>git diff 可以详细查看工作区和暂存区的版本区别 看看哪个文件被修改了 修改了什么内容</h3><h3 id="git-log-查看已经提交到暂存区的历史版本"><a href="#git-log-查看已经提交到暂存区的历史版本" class="headerlink" title="git log 查看已经提交到暂存区的历史版本"></a>git log 查看已经提交到暂存区的历史版本</h3><h3 id="恢复文件到指定的某一个版本"><a href="#恢复文件到指定的某一个版本" class="headerlink" title="恢复文件到指定的某一个版本"></a>恢复文件到指定的某一个版本</h3><p>git reset –hard 版本号 </p>
-<p>检查暂存区所有文件都都没有问题后，就可以将暂存区文件上传到github上，但是要先生成ssh密匙授权本电脑   ssh-keygen -t rsa -C “你github邮箱” 就可以生成本机的ssh密匙然后填写到github的ssh选项中  添加成功后就可以从本机将暂存区的文件传到github远程仓库中</p>
-<h3 id="暂存区-gt-远程仓库"><a href="#暂存区-gt-远程仓库" class="headerlink" title="暂存区 =&gt; 远程仓库"></a>暂存区 =&gt; 远程仓库</h3><p>git remote add origin 远程仓库地址<br>git push -u origin master<br>第一次提交会要求输入github用户和密码  </p>
-<p>第二次提交直接git push即可</p>
-<h3 id="创建分支-并将分支推送到远程仓库"><a href="#创建分支-并将分支推送到远程仓库" class="headerlink" title="创建分支 并将分支推送到远程仓库"></a>创建分支 并将分支推送到远程仓库</h3><p>每次项目新完成一个功能需要在一个新分支里进行最后合并到主分支master<br>git checkout -b 新分支名    创建并切换到新分支<br>git branch 查看分支<br>git branch 分支名 创建分支<br>git checkout 分支名 切换分支<br>每次完成一个新分支的功能之后切换到主分支 git checkout master<br>git merge 分支名  进行分支合并到主分支<br>进入到新创建的分支 将该分支推送到远程分支git push -u origin 远端分支名 第一次推送时 第二次如果修改了该分支直接git push即可</p>
-<h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>从远程仓库克隆项目到本地</p>
-<h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><p>从远程仓库同步本地代码,即更新代码<br>拉取分支代码需要git pull 仓库名 分支名<br>或者git pull –set-upstream origin 分支名</p>
-<p>默认第二次之后提交到主分支 master都是可以省略的 如果需要将代码提交到分支<br>需要git push 仓库名 分支名或者git push –set-upstream origin 分支名</p>
-<p>代码冲突问题 如果代码结构比较单一简单 会进行代码覆盖 如果结构复杂则会出现代码冲突问题</p>
+                <h3 id="工程化"><a href="#工程化" class="headerlink" title="工程化"></a>工程化</h3><blockquote>
+<p>前端工程化目的：<strong>提升业务效率</strong></p>
+</blockquote>
+<blockquote>
+<p>为什么前端要工程化？<strong>为了提高前端开发效率，提高前端应用的可扩展性、可维护性等性能。</strong></p>
+</blockquote>
+<h5 id="前端工程化的内容"><a href="#前端工程化的内容" class="headerlink" title="前端工程化的内容"></a>前端工程化的内容</h5><ol>
+<li>规范：代码规范、目录结构规范、前后端接口规范、文档规范、commit规范、流程规范等</li>
+<li>分支管理：不同的开发人员开发不同的功能或组件，按照统一的流程合并到主干</li>
+<li>构建：主干更新后，自动将代码编译为最终的目标格式，并且准备好各种静态资源<ol>
+<li>编译： babel</li>
+<li>打包： webpack</li>
+</ol>
+</li>
+<li>部署：将构建好的代码部署到生产环境</li>
+<li>版本管理，发布方式（纯前端发布）</li>
+</ol>
+<h5 id="大型网站的一些问题？"><a href="#大型网站的一些问题？" class="headerlink" title="大型网站的一些问题？"></a>大型网站的一些问题？</h5><ul>
+<li>Facebook整站有10000+个静态资源；</li>
+<li>每个静态资源都有可能被翻译成超过100种语言版本；</li>
+<li>每种资源又会针对浏览器生成3种不同的版本；</li>
+<li>要针对不同带宽的用户做5种不同的打包方法；</li>
+<li>有3、4个不同的用户组，用于小批次体验新的产品功能；</li>
+<li>还要考虑不同的送达方法，可以直接送达，或者通过iframe的方式提升资源并行加载的速度；</li>
+<li>静态资源的压缩和非压缩状态可切换，用于调试和定位线上问题</li>
+<li>高性能：CDN部署、<a href="https://developers.google.com/speed/docs/insights/LeverageBrowserCaching" target="_blank" rel="noopener">缓存控制</a>、<a href="https://developers.google.com/speed/docs/insights/LeverageBrowserCaching" target="_blank" rel="noopener">文件指纹</a>、缓存复用、请求合并、按需加载、同步/异步加载、移动端<a href="https://developers.google.com/speed/docs/insights/mobile" target="_blank" rel="noopener">首屏CSS内嵌</a>、HTTP 2.0服务端<a href="http://chimera.labs.oreilly.com/books/1230000000545/ch12.html#HTTP2_PUSH" target="_blank" rel="noopener">资源推送</a>。</li>
+<li><code>https://github.com/fouber/blog/issues/6</code></li>
+</ul>
+<h3 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a><code>Webpack</code></h3><ol>
+<li><p><code>webpack</code>这个前端自动化构建工具，可以完美实现资源的合并、打包、压缩、混淆等诸多功能</p>
+</li>
+<li><p>使用<code>nodejs</code>开发出来的一个前端工具，写<code>webpack.config.js</code>这个配置文件，应该用<code>commonjs</code>规范来写</p>
+</li>
+<li><p>开发流程演变</p>
+<pre><code>书写html文件---&gt; 右键打开html文件 （js，css，图片，字体等都放在各种目录下面）
+不利于有些资源的获取， 不能模拟现实的http请求的 各种状况，文件协议很多有不准确； 所以就有了开发服务器的说法
 
+https://www.webpackjs.com/
+现在我们使用webpack 对es6的 文件进行 转换为浏览器所支持的低版本 js
+npm install webpack -g  这个是全局安装webpack， 在家目录下面的 AppData/Roaming/npm下面，属于一个命令行工具
+npm install webpack  这个是安装在项目里面，在package.json中查看版本，属于开发依赖</code></pre></li>
+<li><p><code>webpack</code>的四个核心概念</p>
+<ol>
+<li>入口(entry)</li>
+<li>输出(output)</li>
+<li>loader</li>
+<li>插件(plugins)</li>
+</ol>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>具体内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>安装webpack</td>
+<td><code>npm install webpack -g</code> <br /><code>npm install webpack-cli -g</code> 用于命令行<br /><code>npm install webpack --save-dev</code> 将<code>webpack</code>安装到 项目开发依赖</td>
+</tr>
+<tr>
+<td>命令行工具使用</td>
+<td><code>webpack app.js dist/bundle.js</code> 将高级<code>js</code>转换为</td>
+</tr>
+<tr>
+<td>html页面更改</td>
+<td><code>index.html</code>中引入的<code>js</code>文件 换位<code>bundle.js</code></td>
+</tr>
+<tr>
+<td>默认配置文件</td>
+<td>使用打包工具的时候，默认的配置文件，打包入口文件名是 main.js</td>
+</tr>
+</tbody></table>
+<h5 id="webpack-配置文件-核心"><a href="#webpack-配置文件-核心" class="headerlink" title="webpack 配置文件,核心"></a><code>webpack</code> 配置文件,核心</h5><h6 id="1-入口和输出"><a href="#1-入口和输出" class="headerlink" title="1. 入口和输出"></a>1. 入口和输出</h6><pre><code>var path = require(&#39;path&#39;);
+
+// 就把他看做在写nodejs， 我们是使用nodejs周边，来辅助我们开发前端
+// 导出一个配置对象，将来webpack在启动的时候，会默认来查找webpack.config.js
+module.exports = {
+  entry: path.resolve(__dirname, &#39;app.js&#39;),  // 默认入口文件是main.js
+  output: {
+    path: path.resolve(__dirname, &#39;dist&#39;),
+    filename: &#39;bundle.js&#39;,
+  },
+};
+
+在命令行输入 webpack，如果命令行参数没有指定入口和出口， 就会自动查找当前目录的webpack.config.js文件，解析对应配置文件，然后进行打包和构建</code></pre><h6 id="2-开发服务器和插件的使用"><a href="#2-开发服务器和插件的使用" class="headerlink" title="2. 开发服务器和插件的使用"></a>2. 开发服务器和插件的使用</h6><pre><code>1. 开发服务器的好处就是  自动实现代码实时打包编译，当修改代码之后，会自动进行打包构建； 不用我们手动使用webpack； 相当于上面哪一步就省略了
+
+2. npm install  webpack-dev-server --save-dev  开发服务器的库
+不要在全局里面直接输入webpack-dev-server； 利用script 节点里面配置任务； 调用当前项目的webpack-dev-server这个库； 要想在命令行直接使用，必须按照全局的这个工具 -g
+
+3. 关于配置文件里面，开发服务器的一些配置是
+
+devServer: {
+    open: true, // 自动打开浏览器
+    port: 8080, // 设置启动时候的运行端口
+    hot: true, // 启用热更新,  ---- 有哪几个步骤呢
+    compress: true, // 开启gzip压缩
+},
+一定注意， 这一步并没有在dist目录里面生成 bundle.js文件， 是放在内存中，这也是为什么我们开发非常快的原因，也可以叫热更新，
+
+4. npm install html-webpack-plugin --save-dev   安装插件
+每次编译之后，还要去修改index首页的 script， src属性，比较麻烦，所以有一种叫插件的东西，自动做这些事情，这个插件有两个作用
+4.1  自动在内存中根据指定页面生成一个内存的页面
+4.2  自动，把打包好的 bundle.js 追加到页面中去</code></pre><h6 id="3-loader的基本使用"><a href="#3-loader的基本使用" class="headerlink" title="3. loader的基本使用"></a>3. <code>loader</code>的基本使用</h6><pre><code>1. loader可以对模块的源代码进行转换，webpack只识别低版本的js， 对于图片，字体图标，css等都要转换为模块； 有点类似于gulp里面的任务task
+2. 我们来试着处理一下 项目中的 css，less，scss三种文件
+
+安装包：
+npm i style-loader css-loader less-loader less --save-dev
+npm i sass-loader node-sass --D  这个sass在亚马逊云上面，不是很好安装，需要一些配置，或者使用cnpm单独安装
+npm i url-loader file-loader -D  处理css中的路径
+
+
+注意点：
+1. loader的解析 都是从右往左，把做右边的结构交给坐标相邻的loader处理
+2. sass 2007年处理，ruby编写；  less 2009年开源，受sass影响较大； 一些细微差别，如变量$ @
+3. url-loader 通过一些配置，可以让图片在一定大小的时候转换为base64格式，进行项目优化，打包进bundle.js； 大于这个临界值的通过file-loader
+
+
+module: {
+  rules: [
+    { test: /\.css$/, use: [&#39;style-loader&#39;, &#39;css-loader&#39;] },
+    { test: /\.less$/, use: [&#39;style-loader&#39;, &#39;css-loader&#39;, &#39;less-loader&#39;] },
+    { test: /\.scss$/, use: [&#39;style-loader&#39;, &#39;css-loader&#39;, &#39;sass-loader&#39;] },
+    // 可以通过`limit`指定进行base64编码的图片大小；只有小于指定字节（byte）的图片才会进行base64编码
+    // { test: /\.(png|jpg|jpeg|gif)$/, use: [&#39;url-loader&#39;] },
+    { test: /\.(png|jpg|jpeg|gif)$/, use: &#39;url-loader?limit=8192&amp;name=[name]-[ext].[hash:8]&#39; },
+  ],
+},</code></pre><h5 id="vue里面webpack相关"><a href="#vue里面webpack相关" class="headerlink" title="vue里面webpack相关"></a>vue里面webpack相关</h5><pre><code>module.exports = {
+  configureWebpack: {
+    module: {
+      rules: [
+      // 可以自己定义一些规则， 这里是小于1KB的就 不用进行base64编码，直接使用原始图片
+        { test: /\.(png|jpg|jpeg|gif)$/, use: &#39;url-loader?limit=1024&amp;name=[name]-[ext].[hash:8]&#39; },
+      ],
+    },
+  },
+  devServer: {
+    open: true, // 自动打开浏览器
+    port: 9000, // 设置启动时候的运行端口
+    hot: true, // 启用热更新,  ---- 有哪几个步骤呢
+    compress: true, // 开启gzip压缩
+  },
+};
+</code></pre><h3 id="Gulp"><a href="#Gulp" class="headerlink" title="Gulp"></a>Gulp</h3>
             </div>
             <hr/>
 
@@ -510,7 +644,7 @@ git i">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lycra-98.github.io/2020/02/12/git/">https://lycra-98.github.io/2020/02/12/git/</a>
+                    <a href="https://lycra-98.github.io/2020/05/04/qian-duan-gong-cheng-hua-de-wen-ti/">https://lycra-98.github.io/2020/05/04/qian-duan-gong-cheng-hua-de-wen-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,8 +682,8 @@ git i">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/webpack%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BD%BF%E7%94%A8/">
+                                    <span class="chip bg-color">webpack原理及使用</span>
                                 </a>
                             
                         </div>
@@ -595,7 +729,7 @@ git i">
         repo: 'Lycra-98.github.io',
         owner: 'Lycra-98',
         admin: "Lycra-98",
-        id: '2020-02-12T15-00-00',
+        id: '2020-05-04T16-00-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -616,46 +750,56 @@ git i">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/02/12/da-jian-hexo-bo-ke-01/">
+                <a href="/2020/05/04/qian-duan-gong-cheng-hua-de-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="初始搭建hexo博客">
+                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="前端工程化问题">
                         
-                        <span class="card-title">初始搭建hexo博客</span>
+                        <span class="card-title">前端工程化问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一步准备工作首先下载node.js运行环境,去官网下载长期稳定版,node安装好中自带npm包管理工具,因为hexo博客框架是基于node.js的，另外还需要下载git,确认这两个本电脑都已经安装可以去看本地path环境变量是否存在两者路
+                            工程化
+前端工程化目的：提升业务效率
+
+
+为什么前端要工程化？为了提高前端开发效率，提高前端应用的可扩展性、可维护性等性能。
+
+前端工程化的内容
+规范：代码规范、目录结构规范、前后端接口规范、文档规范、commit规范、流程规范等
+分支管理
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    hexo博客
+                            <a href="/categories/webpack/" class="post-category">
+                                    webpack
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/webpack%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BD%BF%E7%94%A8/">
+                        <span class="chip bg-color">webpack原理及使用</span>
                     </a>
                     
                 </div>
@@ -669,35 +813,32 @@ git i">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/10/node01/">
+                <a href="/2020/03/28/ts-zhuang-shi-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="node.js第一天的学习">
+                        <img src="https://cdn.jsdelivr.net/gh/Lycra-98/Lycra-98.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="typescript装饰器">
                         
-                        <span class="card-title">node.js第一天的学习</span>
+                        <span class="card-title">typescript装饰器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            进入Node.js的学习node为服务器开发，为后面Ajax后端技术做铺垫
-实现网站的业务逻辑    如登录
-数据的增删改查    如购物车
-node使用javascript语法开发后端应用（有大量开源库可以使用）
-Node是什么node是
+                            装饰器装饰器: 装饰器就是一种特殊类型的声明,可以附加到类声明的方法、属性、参数上，可以修改类的行为，用来动态的修改类的行为,可以在不改变类声明本身的代码的情况下，添加一些额外的功能
+通俗来说装饰器就相当于一个方法，可以注入到类、方法、属性
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/node-js/" class="post-category">
-                                    node.js
+                            <a href="/categories/typescript/" class="post-category">
+                                    typescript
                                 </a>
                             
                             
@@ -707,12 +848,8 @@ Node是什么node是
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/node-js/">
-                        <span class="chip bg-color">node.js</span>
-                    </a>
-                    
-                    <a href="/tags/npm/">
-                        <span class="chip bg-color">npm</span>
+                    <a href="/tags/typescript/">
+                        <span class="chip bg-color">typescript</span>
                     </a>
                     
                 </div>
